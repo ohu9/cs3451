@@ -1,0 +1,7 @@
+- how to run tutorials? tried: ./scripts/run_tutorial.sh tutorial_mesh
+
+- updating even vertices formula?
+
+- zoom
+
+- seg fault with cap.obj

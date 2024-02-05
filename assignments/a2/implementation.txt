@@ -1,0 +1,37 @@
+SUMMARY:
+For the geometry update and building auxilary data structure, I use a nested for loop to iterate through each triangle and each vertex. I add the neighbors of each vertex to the vtx_vtx_map and map the current triangle to the current edge in the edge_tri_map. Then to add odd vertices, I check if the edge_odd_vtx_map already contains the current edge, and if not, I add the midpoint of the edge's endpoints, add this to the edge_odd_vtx_map, and push the new vertex to new_vtx. After looping through the vertices, I extract the even and odd vertices of this triangle and push the 4 new triangles to the new_tri array.
+For the topography smoothing, I first update the odd vertex positions by looping through each edge in the edge_tri_map, finding the corresponding odd vertex, calculating its new position with a weighted average (using vertices in the old_vtx array), and saving the new position in the new_vtx array.
+I then update the even vertices by iterating through each vertex in the vtx_vtx_map, calculating the new position with a weighted average of neighboring vertices in old_vtx, and again saving the new position in the new_vtx array.
+Finally I replace the old vertex and triangle arrays with the new ones and complete the algorithm.
+
+
+DETAILED IMPLEMENTATION:
+Step 0: create auxilary data structures
+I start by iterating through each vertex of each triangle to build the auxilary data structures.
+For vtx_vtx_map, with the current vertex, I iterate through the other 2 vertices in that triangle, and if they have not yet been added to that vertex's array, I used the push_back function to add it.
+For edge_tri_map, I create an edge with the current vertex and its +1 adjacent, sort the vertices using a temp variable (to avoid duplicate edges), and push the current triangle to that edge's corresponding array.
+edge_odd_vtx_map will be built later when odd vertices are added.
+
+step 1: add odd vertices
+In the same nested for loop (which is visiting every vertex by triangle), I implemented step 1.
+I first check if the current edge (current vtx, current vtx + 1) has been added to the edge_odd_vtx_map. 
+   If it has, then its odd vertex has already been added, so we continue to the next vertex/edge in the triangle.
+   If it hasn't, then I create a new vertex at the midpoint between the edge's 2 vertices and add it to the new_vtx array, then update the edge_odd_vtx_map.
+
+I then update the new_tri array, adding 4 new triangles (created using new odd vertices) for each triangle in old_tri.
+    I visit each vertex in the current triangle, find the 2 adjacent edges, and look up each edge's odd vertex in the edge_odd_vtx_map. I push triangle made of the current vertex and the 2 odd vertices, and I save the first odd vertex to an array of this triangle's odd vertices, to be added later.
+    After visitng each vertex, I push a triangle of the saved odd vertices to new_tri to make a total of 4 new triangles.
+This concludes step 1.
+
+Step 2: update odd vertex positions
+I iterate through all the edges in edge_tri_map and define 
+    1. the edge's corresponding odd vertex (using edge_odd_vtx_map)
+    2. the 2 triangles that shrare that edge
+I then use a helper function, find_opposite_vertex, to find the opposite vertices to the odd vertex
+and finally calculate the weighted average of the 4 relevant even vertices and update the position of the odd vertex.
+
+Step 3: update even vertex positions
+I iterate through all the vertices in the old_vtx array, and at each vertex, I recalculate its position based on surrounding even vertices. 
+The vtx_vtx_map data structure, which was built from the old mesh, was useful for accessing all the adjacent vertices, whose positions were used in the weighted average.
+I then recorded the new position in the new_vtx array so as not to disrupt subsequent vertex updates, which are all based on the old_vtx array.
+

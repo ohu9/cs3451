@@ -1,0 +1,646 @@
+std::cout << "size old_vtx: " << old_vtx.size() << std::endl;
+std::cout << "\n\n\ncurrent triangle: " << i << std::endl;
+std::cout << "\nvertices: " << vtx << " " << tri[(j + 1) % 3] << " " << tri[(j + 2) % 3] << std::endl;
+std::cout << "vtx_vtx_map size: " << vtx_vtx_map.size() << std::endl;
+std::cout << "entries at this vtx(" << vtx << "): " << vtx_vtx_map[vtx].size() << std::endl;
+
+
+size old_vtx: 12
+size edge_tri_map: 30
+size old_tri: 20
+
+
+
+current triangle: 0
+
+vertices: 0 1 4
+vtx_vtx_map size: 1
+entries at this vtx(0): 2
+
+vertices: 1 4 0
+vtx_vtx_map size: 2
+entries at this vtx(1): 2
+
+vertices: 4 0 1
+vtx_vtx_map size: 3
+entries at this vtx(4): 2
+
+
+
+current triangle: 1
+
+vertices: 1 9 4
+vtx_vtx_map size: 3
+entries at this vtx(1): 3
+
+vertices: 9 4 1
+vtx_vtx_map size: 4
+entries at this vtx(9): 2
+
+vertices: 4 1 9
+vtx_vtx_map size: 4
+entries at this vtx(4): 3
+
+
+
+current triangle: 2
+
+vertices: 4 9 5
+vtx_vtx_map size: 4
+entries at this vtx(4): 4
+
+vertices: 9 5 4
+vtx_vtx_map size: 4
+entries at this vtx(9): 3
+
+vertices: 5 4 9
+vtx_vtx_map size: 5
+entries at this vtx(5): 2
+
+
+
+current triangle: 3
+
+vertices: 5 9 3
+vtx_vtx_map size: 5
+entries at this vtx(5): 3
+
+vertices: 9 3 5
+vtx_vtx_map size: 5
+entries at this vtx(9): 4
+
+vertices: 3 5 9
+vtx_vtx_map size: 6
+entries at this vtx(3): 2
+
+
+
+current triangle: 4
+
+vertices: 2 3 7
+vtx_vtx_map size: 7
+entries at this vtx(2): 2
+
+vertices: 3 7 2
+vtx_vtx_map size: 7
+entries at this vtx(3): 4
+
+vertices: 7 2 3
+vtx_vtx_map size: 8
+entries at this vtx(7): 2
+
+
+
+current triangle: 5
+
+vertices: 3 2 5
+vtx_vtx_map size: 8
+entries at this vtx(3): 4
+
+vertices: 2 5 3
+vtx_vtx_map size: 8
+entries at this vtx(2): 3
+
+vertices: 5 3 2
+vtx_vtx_map size: 8
+entries at this vtx(5): 4
+
+
+
+current triangle: 6
+
+vertices: 7 10 2
+vtx_vtx_map size: 8
+entries at this vtx(7): 3
+
+vertices: 10 2 7
+vtx_vtx_map size: 9
+entries at this vtx(10): 2
+
+vertices: 2 7 10
+vtx_vtx_map size: 9
+entries at this vtx(2): 4
+
+
+
+current triangle: 7
+
+vertices: 0 8 10
+vtx_vtx_map size: 9
+entries at this vtx(0): 4
+
+vertices: 8 10 0
+vtx_vtx_map size: 10
+entries at this vtx(8): 2
+
+vertices: 10 0 8
+vtx_vtx_map size: 10
+entries at this vtx(10): 4
+
+
+
+current triangle: 8
+
+vertices: 0 4 8
+vtx_vtx_map size: 10
+entries at this vtx(0): 4
+
+vertices: 4 8 0
+vtx_vtx_map size: 10
+entries at this vtx(4): 5
+
+vertices: 8 0 4
+vtx_vtx_map size: 10
+entries at this vtx(8): 3
+
+
+
+current triangle: 9
+
+vertices: 8 2 10
+vtx_vtx_map size: 10
+entries at this vtx(8): 4
+
+vertices: 2 10 8
+vtx_vtx_map size: 10
+entries at this vtx(2): 5
+
+vertices: 10 8 2
+vtx_vtx_map size: 10
+entries at this vtx(10): 4
+
+
+
+current triangle: 10
+
+vertices: 8 4 5
+vtx_vtx_map size: 10
+entries at this vtx(8): 5
+
+vertices: 4 5 8
+vtx_vtx_map size: 10
+entries at this vtx(4): 5
+
+vertices: 5 8 4
+vtx_vtx_map size: 10
+entries at this vtx(5): 5
+
+
+
+current triangle: 11
+
+vertices: 8 5 2
+vtx_vtx_map size: 10
+entries at this vtx(8): 5
+
+vertices: 5 2 8
+vtx_vtx_map size: 10
+entries at this vtx(5): 5
+
+vertices: 2 8 5
+vtx_vtx_map size: 10
+entries at this vtx(2): 5
+
+
+
+current triangle: 12
+
+vertices: 1 0 6
+vtx_vtx_map size: 10
+entries at this vtx(1): 4
+
+vertices: 0 6 1
+vtx_vtx_map size: 10
+entries at this vtx(0): 5
+
+vertices: 6 1 0
+vtx_vtx_map size: 11
+entries at this vtx(6): 2
+
+
+
+current triangle: 13
+
+vertices: 11 1 6
+vtx_vtx_map size: 12
+entries at this vtx(11): 2
+
+vertices: 1 6 11
+vtx_vtx_map size: 12
+entries at this vtx(1): 5
+
+vertices: 6 11 1
+vtx_vtx_map size: 12
+entries at this vtx(6): 3
+
+
+
+current triangle: 14
+
+vertices: 3 9 11
+vtx_vtx_map size: 12
+entries at this vtx(3): 5
+
+vertices: 9 11 3
+vtx_vtx_map size: 12
+entries at this vtx(9): 5
+
+vertices: 11 3 9
+vtx_vtx_map size: 12
+entries at this vtx(11): 4
+
+
+
+current triangle: 15
+
+vertices: 6 10 7
+vtx_vtx_map size: 12
+entries at this vtx(6): 5
+
+vertices: 10 7 6
+vtx_vtx_map size: 12
+entries at this vtx(10): 5
+
+vertices: 7 6 10
+vtx_vtx_map size: 12
+entries at this vtx(7): 4
+
+
+
+current triangle: 16
+
+vertices: 3 11 7
+vtx_vtx_map size: 12
+entries at this vtx(3): 5
+
+vertices: 11 7 3
+vtx_vtx_map size: 12
+entries at this vtx(11): 5
+
+vertices: 7 3 11
+vtx_vtx_map size: 12
+entries at this vtx(7): 5
+
+
+
+current triangle: 17
+
+vertices: 11 6 7
+vtx_vtx_map size: 12
+entries at this vtx(11): 5
+
+vertices: 6 7 11
+vtx_vtx_map size: 12
+entries at this vtx(6): 5
+
+vertices: 7 11 6
+vtx_vtx_map size: 12
+entries at this vtx(7): 5
+
+
+
+current triangle: 18
+
+vertices: 6 0 10
+vtx_vtx_map size: 12
+entries at this vtx(6): 5
+
+vertices: 0 10 6
+vtx_vtx_map size: 12
+entries at this vtx(0): 5
+
+vertices: 10 6 0
+vtx_vtx_map size: 12
+entries at this vtx(10): 5
+
+
+
+current triangle: 19
+
+vertices: 9 1 11
+vtx_vtx_map size: 12
+entries at this vtx(9): 5
+
+vertices: 1 11 9
+vtx_vtx_map size: 12
+entries at this vtx(1): 5
+
+vertices: 11 9 1
+vtx_vtx_map size: 12
+entries at this vtx(11): 5
+
+
+
+
+
+
+----------------------------
+std::cout << i << " old vtx: (" << old_vtx[i][0] << ", " << old_vtx[i][1] << ", " << old_vtx[i][2] << ")" << std::endl;
+std::cout << "  " << adj_vtx[j] << ":  (" << adj_vtx[j] << old_vtx[adj_vtx[j]][0] << ", " << old_vtx[adj_vtx[j]][1] << ", " << old_vtx[adj_vtx[j]][2] << ")" << std::endl;
+std::cout << " adj vtx sum: (" << adj_vtx_sum[0] << ", " << adj_vtx_sum[1] << ", " << adj_vtx_sum[2] << ")" << std::endl;
+std::cout << i << " new vtx: (" << new_vtx[i][0] << ", " << new_vtx[i][1] << ", " << new_vtx[i][2] << ")\n"<< std::endl;
+
+
+size old_vtx: 12
+0 old vtx: (0.5, 0.809017, 0)
+  1:  (1-0.5, 0.809017, 0)
+  4:  (40, 0.5, 0.809017)
+  8:  (80.809017, 0, 0.5)
+  10:  (100.809017, 0, -0.5)
+  6:  (60, 0.5, -0.809017)
+ adj vtx sum: (1.11803, 1.80902, 0)
+check
+0 new vtx: (0.396353, 0.641312, 0)
+
+1 old vtx: (-0.5, 0.809017, 0)
+  4:  (40, 0.5, 0.809017)
+  0:  (00.5, 0.809017, 0)
+  9:  (9-0.809017, 0, 0.5)
+  6:  (60, 0.5, -0.809017)
+  11:  (11-0.809017, 0, -0.5)
+ adj vtx sum: (0, 3.61803, 0)
+check
+1 new vtx: (-0.3125, 0.776988, 0)
+
+2 old vtx: (0.5, -0.809017, 0)
+  3:  (3-0.5, -0.809017, 0)
+  7:  (70, -0.5, -0.809017)
+  5:  (50, -0.5, 0.809017)
+  10:  (100.809017, 0, -0.5)
+  8:  (80.809017, 0, 0.5)
+ adj vtx sum: (1.11803, 1.80902, 0)
+check
+2 new vtx: (0.396353, -0.369959, 0)
+
+3 old vtx: (-0.5, -0.809017, 0)
+  5:  (50, -0.5, 0.809017)
+  9:  (9-0.809017, 0, 0.5)
+  7:  (70, -0.5, -0.809017)
+  2:  (20.5, -0.809017, 0)
+  11:  (11-0.809017, 0, -0.5)
+ adj vtx sum: (0, 0, 0)
+check
+3 new vtx: (-0.3125, -0.505636, 0)
+
+4 old vtx: (0, 0.5, 0.809017)
+  0:  (00.5, 0.809017, 0)
+  1:  (1-0.5, 0.809017, 0)
+  9:  (9-0.809017, 0, 0.5)
+  5:  (50, -0.5, 0.809017)
+  8:  (80.809017, 0, 0.5)
+ adj vtx sum: (0, 1.11803, 1.80902)
+check
+4 new vtx: (0, 0.396353, 0.641312)
+
+5 old vtx: (0, -0.5, 0.809017)
+  4:  (40, 0.5, 0.809017)
+  9:  (9-0.809017, 0, 0.5)
+  3:  (3-0.5, -0.809017, 0)
+  2:  (20.5, -0.809017, 0)
+  8:  (80.809017, 0, 0.5)
+ adj vtx sum: (0, 0, 3.61803)
+check
+5 new vtx: (0, -0.3125, 0.776988)
+
+6 old vtx: (0, 0.5, -0.809017)
+  1:  (1-0.5, 0.809017, 0)
+  0:  (00.5, 0.809017, 0)
+  11:  (11-0.809017, 0, -0.5)
+  10:  (100.809017, 0, -0.5)
+  7:  (70, -0.5, -0.809017)
+ adj vtx sum: (0, 1.11803, 1.80902)
+check
+6 new vtx: (0, 0.396353, -0.369959)
+
+7 old vtx: (0, -0.5, -0.809017)
+  2:  (20.5, -0.809017, 0)
+  3:  (3-0.5, -0.809017, 0)
+  10:  (100.809017, 0, -0.5)
+  6:  (60, 0.5, -0.809017)
+  11:  (11-0.809017, 0, -0.5)
+ adj vtx sum: (0, 0, 0)
+check
+7 new vtx: (0, -0.3125, -0.505636)
+
+8 old vtx: (0.809017, 0, 0.5)
+  10:  (100.809017, 0, -0.5)
+  0:  (00.5, 0.809017, 0)
+  4:  (40, 0.5, 0.809017)
+  2:  (20.5, -0.809017, 0)
+  5:  (50, -0.5, 0.809017)
+ adj vtx sum: (1.80902, 0, 1.11803)
+check
+8 new vtx: (0.641312, 0, 0.396353)
+
+9 old vtx: (-0.809017, 0, 0.5)
+  4:  (40, 0.5, 0.809017)
+  1:  (1-0.5, 0.809017, 0)
+  5:  (50, -0.5, 0.809017)
+  3:  (3-0.5, -0.809017, 0)
+  11:  (11-0.809017, 0, -0.5)
+ adj vtx sum: (0, 0, 2.23607)
+check
+9 new vtx: (-0.505636, 0, 0.480205)
+
+10 old vtx: (0.809017, 0, -0.5)
+  2:  (20.5, -0.809017, 0)
+  7:  (70, -0.5, -0.809017)
+  0:  (00.5, 0.809017, 0)
+  8:  (80.809017, 0, 0.5)
+  6:  (60, 0.5, -0.809017)
+ adj vtx sum: (1.80902, 0, 1.11803)
+check
+10 new vtx: (0.641312, 0, -0.228647)
+
+11 old vtx: (-0.809017, 0, -0.5)
+  1:  (1-0.5, 0.809017, 0)
+  6:  (60, 0.5, -0.809017)
+  3:  (3-0.5, -0.809017, 0)
+  9:  (9-0.809017, 0, 0.5)
+  7:  (70, -0.5, -0.809017)
+ adj vtx sum: (0, 0, 0)
+check
+11 new vtx: (-0.505636, 0, -0.3125)
+
+
+----------------------------------------------------
+ADDING ODD VERTICES
+std::cout << "\n\nedge: (" << edge[0] << ", " << edge[1] << ") " << std::endl;
+std::cout << "new odd vtx: " << new_vtx.size() - 1 << std::endl;
+
+edge: (0, 1) 
+new odd vtx: 12
+
+
+edge: (1, 4) 
+new odd vtx: 13
+
+
+edge: (0, 4) 
+new odd vtx: 14
+
+
+edge: (1, 9) 
+new odd vtx: 15
+
+
+edge: (4, 9) 
+new odd vtx: 16
+
+
+edge: (5, 9) 
+new odd vtx: 17
+
+
+edge: (4, 5) 
+new odd vtx: 18
+
+
+edge: (3, 9) 
+new odd vtx: 19
+
+
+edge: (3, 5) 
+new odd vtx: 20
+
+
+edge: (2, 3) 
+new odd vtx: 21
+
+
+edge: (3, 7) 
+new odd vtx: 22
+
+
+edge: (2, 7) 
+new odd vtx: 23
+
+
+edge: (2, 5) 
+new odd vtx: 24
+
+
+edge: (7, 10) 
+new odd vtx: 25
+
+
+edge: (2, 10) 
+new odd vtx: 26
+
+
+edge: (0, 8) 
+new odd vtx: 27
+
+
+edge: (8, 10) 
+new odd vtx: 28
+
+
+edge: (0, 10) 
+new odd vtx: 29
+
+
+edge: (4, 8) 
+new odd vtx: 30
+
+
+edge: (2, 8) 
+new odd vtx: 31
+
+
+edge: (5, 8) 
+new odd vtx: 32
+
+
+edge: (0, 6) 
+new odd vtx: 33
+
+
+edge: (1, 6) 
+new odd vtx: 34
+
+
+edge: (1, 11) 
+new odd vtx: 35
+
+
+edge: (6, 11) 
+new odd vtx: 36
+
+
+edge: (9, 11) 
+new odd vtx: 37
+
+
+edge: (3, 11) 
+new odd vtx: 38
+
+
+edge: (6, 10) 
+new odd vtx: 39
+
+
+edge: (6, 7) 
+new odd vtx: 40
+
+
+edge: (7, 11) 
+new odd vtx: 41
+
+
+
+
+--------------------------------------
+UPDATING EVEN VERTICES
+0 old vtx: (0.5, 0.809017, 0)
+0 new vtx: (0.396353, 0.641312, 0)
+
+1 old vtx: (-0.5, 0.809017, 0)
+1 new vtx: (-0.3125, 0.776988, 0)
+
+2 old vtx: (0.5, -0.809017, 0)
+2 new vtx: (0.396353, -0.369959, 0)
+
+3 old vtx: (-0.5, -0.809017, 0)
+3 new vtx: (-0.3125, -0.505636, 0)
+
+4 old vtx: (0, 0.5, 0.809017)
+4 new vtx: (0, 0.396353, 0.641312)
+
+5 old vtx: (0, -0.5, 0.809017)
+5 new vtx: (0, -0.3125, 0.776988)
+
+6 old vtx: (0, 0.5, -0.809017)
+6 new vtx: (0, 0.396353, -0.369959)
+
+7 old vtx: (0, -0.5, -0.809017)
+7 new vtx: (0, -0.3125, -0.505636)
+
+8 old vtx: (0.809017, 0, 0.5)
+8 new vtx: (0.641312, 0, 0.396353)
+
+9 old vtx: (-0.809017, 0, 0.5)
+9 new vtx: (-0.505636, 0, 0.480205)
+
+10 old vtx: (0.809017, 0, -0.5)
+10 new vtx: (0.641312, 0, -0.228647)
+
+11 old vtx: (-0.809017, 0, -0.5)
+11 new vtx: (-0.505636, 0, -0.3125)
+
+
+
+------------------------
+vertices in vtx_vtx_map and their neighbors
+11  |   1, 6, 3, 9, 7
+6   |   1, 0, 11, 10, 7
+8   |   10, 0, 4, 2, 5
+10  |   2, 7, 0, 8, 6
+7   |   2, 3, 10, 6, 11
+2   |   3, 7, 5, 10, 8
+3   |   5, 9, 7, 2, 11
+9   |   4, 1, 5, 3, 11
+4   |   0, 1, 9, 5, 8
+1   |   4, 0, 9, 6, 11
+5   |   4, 9, 3, 2, 8
+0   |   1, 4, 8, 10, 6
