@@ -28,196 +28,220 @@
 class MyDriver : public OpenGLViewer
 {
 	std::vector<OpenGLTriangleMesh*> mesh_object_array;						////mesh objects, every object you put in this array will be rendered.
-	OpenGLSegmentMesh* floor=nullptr;
+	OpenGLSegmentMesh* floor = nullptr;
 	std::vector<OpenGLSegmentMesh*> coords, trajectory;
 	clock_t startTime;
 public:
 	virtual void Initialize()
 	{
-		//// If you want to change the current background color: 		
-		//// Goto OpenGLShaderProgrammcpp Line 247 and 248 and change the two colors
-
-		draw_bk=true;						//// This flag specifies a customized way to draw the background. If you turn it off, there is no background.
-		draw_axes=false;					//// This flag controls the rendering of the default axes (turned off by default)
-		startTime=clock();
+		draw_axes = false;
+		startTime = clock();
 		OpenGLViewer::Initialize();
 		opengl_window->camera_distance = 25.f;
 		opengl_window->camera_target = Vector3f(0, 3.5, 0);
 		opengl_window->Update_Clip_Planes();
 	}
 
+	void Create_Background(const OpenGLColor& color1, const OpenGLColor& color2)
+	{
+		auto bg = Add_Interactive_Object<OpenGLBackground>();
+		bg->Set_Color(color1, color2);
+		bg->Initialize();
+	}
+
 	virtual void Initialize_Data()
 	{
-		OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a3_vert.vert","a3_frag.frag","a3_shading");	////bind shader for this assignment
-		Create_Angry_Bird_Palace();
+		Create_Background(OpenGLColor(0.71f, 0.6f, 0.17f, 1.f), OpenGLColor(0.71f, 0.87f, 0.17f, 1.f));
+		OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a3_vert.vert", "a3_frag.frag", "a3_shading");	////bind shader for this assignment
+
+		Create_Angry_Bird_Palace();					////TODO: Comment this line when you start to implement your customized scene
+		//// Create_Angry_Bird_Garden();			////TODO: Uncomment this line when you start to implement your customized scene
+
 	}
 
 	void Create_Angry_Bird_Palace()
 	{
 		//// draw the three axes
-		Add_Coord({ Vector3(0, 0, 0), Vector3(5, 0, 0) }, OpenGLColor(1, 0, 0, 1));	//// X axis
+		Add_Coord({ Vector3(0, 0.01, 0), Vector3(5, 0.01, 0) }, OpenGLColor(1, 0, 0, 1));	//// X axis
 		Add_Coord({ Vector3(0, 0, 0), Vector3(0, 5, 0) }, OpenGLColor(0, 1, 0, 1));	//// Y axis
-		Add_Coord({ Vector3(0, 0, 0), Vector3(0, 0, 5) }, OpenGLColor(0, 0, 1, 1));	//// Z zxis
-		// 		
+		Add_Coord({ Vector3(0, 0.01, 0), Vector3(0, 0.01, 5) }, OpenGLColor(0, 0, 1, 1));	//// Z zxis
+
 		//// draw the ground
 		Add_Ground();
 
-		// add castle
-		auto castle = Add_Tranformable_Obj_From_File("castle.obj",OpenGLColor(.5f,.5f,.5f,1.f));
+		//// Step 1: add the castle by reading the model from "castle.obj" 
+		//// The model needs to undergo the following transform operations in sequence: 
+		//// (1) rotate *counterclockwisely* around the y-axis by 90 degrees, 
+		//// (2) uniformly scale by a factor of 5,
+		//// (3) translate upwards by 1.3 units in the y direction.
+		//// Your task is to specify the values of the 4x4 transform matrix and send it to the mesh model via Set_Model_Matrix().
+		//// You are allowed to use a chain of matrix multiplications to calculate the matrix.
+
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+		auto castle = Add_Obj_Mesh_Object_From_File("castle.obj", OpenGLColor(.6f, .6f, .6f, 1.f));
 		{
 			Matrix4f t;
-			t << 5., 0., 0., 0.,
-				 0., 5., 0., 1.3,
-				 0., 0., 5., 0.,
-				 0., 0., 0., 1.;
-			float angle = 3.1415927f * -.5f;
-			Matrix4f r;
-			r << cos(angle), 0., -sin(angle), 0.,
+			t << 1., 0., 0., 0.,
 				0., 1., 0., 0.,
-				sin(angle), 0., cos(angle), 0.,
+				0., 0., 1., 0.,
 				0., 0., 0., 1.;
 
-			castle->Set_Model_Matrix(t*r);
+			castle->Set_Model_Matrix(t);
 		}
-		
-		//// add axes
-		auto axes = Add_Tranformable_Obj_From_File("axes.obj", OpenGLColor(.9f, .5f, .0f, 1.f));
+		/* Your implementation ends. */
+
+		//// Step 2: add the axes statue by reading the model from "axes.obj" 
+		//// The model needs to undergo the following transform operations in sequence: 
+		//// (1) rotate *counterclockwisely* around the y-axis by 90 degrees, 
+		//// (2) uniformly scale by a factor of 2,
+		//// (3) translate by 6 units in the positive x direction and 1 unit in the z direction.
+
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+		auto axes = Add_Obj_Mesh_Object_From_File("axes.obj", OpenGLColor(.9f, .5f, .0f, 1.f));
 		{
-			Matrix4f r;
-			float angle = 3.1415927f * -.5f;
-			r << cos(angle), 0., -sin(angle), 0.,
-				0., 1., 0., 0.,
-				sin(angle), 0., cos(angle), 0.,
-				0., 0., 0., 1.;
-
 			Matrix4f t;
-			t << 2., 0., 0., 6.,
-				0., 2., 0., 1.,
-				0., 0., 2., 0.,
+			t << 1., 0., 0., 0.,
+				0., 1., 0., 0.,
+				0., 0., 1., 0.,
 				0., 0., 0., 1.;
 
-			Matrix4f transform = t * r;
-			axes->Set_Model_Matrix(transform);
+			axes->Set_Model_Matrix(t);
 		}
+		/* Your implementation ends. */
 
-		//// add tower
-		auto tower = Add_Tranformable_Obj_From_File("tower.obj", OpenGLColor(.0f, .5f, .5f, 1.f));
+		//// Step 3: add the magic tower by reading the model from "tower.obj" 
+		//// The model needs to undergo the following transform operations in sequence: 
+		//// (1) rotate *clockwisely* around the y-axis by 45 degrees, 
+		//// (2) non-uniformly scale by factors of 2, 6, 2 in the x, y, z directions
+		//// (3) translate by 6 units in the negative x direction and 3 units in the z direction.
+
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+		auto tower = Add_Obj_Mesh_Object_From_File("tower.obj", OpenGLColor(.0f, .5f, .5f, 1.f));
 		{
-			Matrix4f r;
-			float angle = 3.1415927f * .25f;
-			r << cos(angle), 0., -sin(angle), 0.,
-				0., 1., 0., 0.,
-				sin(angle), 0., cos(angle), 0.,
-				0., 0., 0., 1.;
-
 			Matrix4f t;
-			t << 2., 0., 0., -6.,
-				0., 6., 0., 3.,
-				0., 0., 2., 0.,
+			t << 1., 0., 0., 0.,
+				0., 1., 0., 0.,
+				0., 0., 1., 0.,
 				0., 0., 0., 1.;
 
-			Matrix4f transform = t * r;
-			tower->Set_Model_Matrix(transform);
+			tower->Set_Model_Matrix(t);
 		}
+		/* Your implementation ends. */
 
-		//// add trees
+		//// Step 4: add 24 trees by reading the model from "tree1.obj" 
+		//// The 24 trees need to be distributed evenly and at equal distances along the circumference of the inner circle. 
+		//// The circle has its center at the origin and a radius of 8.
+		//// Each tree needs to be translated in the positive y axis by 0.5 unit to ensure its base is above the ground.
+		//// Calculate the transform matrix for each tree in the following for-loop.
+
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		int tree_num = 24;
-		float theta = 3.1415927f * 2.f / (float)tree_num;
 		for (int i = 0; i < tree_num; i++) {
-			float angle = theta * (float)i;
-			auto tree = Add_Tranformable_Obj_From_File("tree1.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
+			auto tree = Add_Obj_Mesh_Object_From_File("tree1.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
 			{
-				Matrix4f r;
-				r << cos(angle), 0., -sin(angle), 0.,
-					0., 1., 0., 0.,
-					sin(angle), 0., cos(angle), 0.,
-					0., 0., 0., 1.;
 				Matrix4f t;
-				t << 1., 0., 0., 8.,
-					 0., 1., 0., 0.5,
-					 0., 0., 1., 0.,
-					 0., 0., 0., 1.;
-				Matrix4f transform = r * t;
-				tree->Set_Model_Matrix(transform);
-			}
-		}
-
-		int tree2_num = 36;
-		float theta2 = 3.1415927f * 2.f / (float)tree2_num;
-		for (int i = 0; i < tree2_num; i++) {
-			float angle = theta2 * (float)i;
-			auto tree = Add_Tranformable_Obj_From_File("tree2.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
-			{
-				Matrix4f r;
-				r << cos(angle), 0., -sin(angle), 0.,
+				t << 1., 0., 0., 0.,
 					0., 1., 0., 0.,
-					sin(angle), 0., cos(angle), 0.,
-					0., 0., 0., 1.;
-				Matrix4f t;
-				t << 1., 0., 0., 10.,
-					0., 1., 0., 0.5,
 					0., 0., 1., 0.,
 					0., 0., 0., 1.;
-				Matrix4f transform = r * t;
-				tree->Set_Model_Matrix(transform);
+				tree->Set_Model_Matrix(t);
 			}
 		}
+		/* Your implementation ends. */
 
-		//// add angry birds
-		/**
-		 * Capture keyframes of a throwing bird
-		 * An angry bird is thrown from (-5, 0, 0) with initial velocity (5, 9.8, 0) (unit/sec)
-		 * and angular velocity omega = 150 (deg/sec) clockwise (be careful about the direction of rotation)
-		 * Given gravity g = -9.8 (unit/sec) in y direction
-		 * Compute x using x = x0 + ux * t
-		 * Compute y using y = uy * t - 0.5 * g * t * t
-		 * your goal is to draw 6 birds at time t = 0.2, 0.5, 0.8, 1.1, 1.4, 1.7 respectively.
-		**/
+		//// Step 5: add 36 trees by reading the model from "tree2.obj" 
+		//// The 36 trees need to be distributed evenly and at equal distances along the circumference of the outer circle. 
+		//// The circle has its center at the origin and a radius of 10.
+		//// Each tree needs to be translated in the positive y axis by 0.5 unit to ensure its base is above the ground.
+		//// Calculate the transform matrix for each tree in the following for-loop.
 
-		//Add_Arc_Trajectory();
-
-		std::vector<float> time = { 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2. };
-		int bird_num = 6;
-		float omega = -3.1415927f * 2.f * 150.f / 360.f;
-		float ux = 5.f;
-		float uy = 9.8f;
-		float g = 9.8f;
-		for (int i = 0; i < bird_num; i++) {
-			float t = time[i];
-			float angle = omega*t;
-			float x = -5. + ux * t;
-			float y = uy * t - 0.5 * g * t * t;
-
-			auto bird = Add_Tranformable_Obj_From_File("bird.obj", OpenGLColor(1.f, 0.2f, 0.f, 1.f));
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+		int tree2_num = 36;
+		for (int i = 0; i < tree2_num; i++) {
+			auto tree = Add_Obj_Mesh_Object_From_File("tree2.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
 			{
 				Matrix4f t;
-				t << cos(angle), -sin(angle), 0., x,
-					 sin(angle), cos(angle), 0., y,
+				t << 1., 0., 0., 0.,
+					0., 1., 0., 0.,
+					0., 0., 1., 0.,
+					0., 0., 0., 1.;
+				tree->Set_Model_Matrix(t);
+			}
+		}
+		/* Your implementation ends. */
+
+		//// Step 6: add 5 stone steps by using the function `Add_Cube()`
+		//// `Add_Cube()` adds a cube mesh to the scene with its center at the origin and each side measuring 1 unit.
+		//// Each stone step has its size as 1, 0.1, and 0.5 along x, y, z axes.
+		//// The center of the first stone step is in (0, 0, 3), incremented by 1 in positive z direction for the following stone steps.
+		//// Calculate the transform matrix for each stone step in the following for-loop.
+
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+		for (int i = 0; i < 5; i++) {
+			auto cube1 = Add_Cube(1.f, OpenGLColor(0.1f, 0.1f, 0.1f, 1.f));
+			{
+				Matrix4f t;
+				t << 1., 0., 0., 0.,
+					0., 1., 0., 0.,
+					0., 0., 1., 0.,
+					0., 0., 0., 1.;
+				cube1->Set_Model_Matrix(t);
+			}
+		}
+		/* Your implementation ends. */
+
+		//// Step 7: add 6 keyframes of a throwing angry bird following a parabola.
+		//// The angry bird is thrown from (-5, 0, 0) with initial velocity (5, 9.8, 0) (unit/sec)
+		//// Its angular velocity omega = 150 (deg/sec) *clockwise* 		 
+		//// The gravity is g = 9.8 (unit/sec) in negative y direction
+		//// The x coordinate of the bird can be calculated as x = x0 + ux * t
+		//// The y coordinate of the bird can be calculated as y = uy * t - 0.5 * g * t * t
+		//// Your task is to draw keyframes at time t = 0.2, 0.5, 0.8, 1.1, 1.4, 1.7 respectively.
+		//// To this end, you need to calculate the transform matrix for each keyframe of the angry bird in the following for-loop.
+		//// You can temporarily uncomment the following line to visualize the parabola trajectory as a reference during implementation. 
+		//// Comment it out again once you complete the task.
+		
+		//// Add_Arc_Trajectory();
+
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+		std::vector<float> time = { 0.2, 0.5, 0.8, 1.1, 1.4, 1.7 };
+		int bird_num = 6;
+		for (int i = 0; i < bird_num; i++) {
+			auto bird = Add_Obj_Mesh_Object_From_File("bird.obj", OpenGLColor(1.f, 0.2f, 0.f, 1.f));
+			{
+				Matrix4f t;
+				t << 1., 0., 0., 0.,
+					0., 1., 0., 0.,
 					0., 0., 1., 0.,
 					0., 0., 0., 1.;
 				bird->Set_Model_Matrix(t);
 			}
 		}
+		/* Your implementation ends. */
+	}
 
-		// draw a cube
-		for (int i = 0; i < 5; i++) {
-			float offset = 3. + (float)i;
-			auto cube1 = Add_Cube(1.f, OpenGLColor(1.f, 1.f, 1.f, 1.f));
-			{
-				Matrix4f t;
-				t << 1, 0, 0, 0,
-					0, 0.1, 0, 0.,
-					0, 0, 0.5, offset,
-					0, 0, 0, 1;
-				cube1->Set_Model_Matrix(t);
-			}
-		}
+	//// Step 8: Create a new garden scene by using the mesh objects we provided, or download your own from online resources. 
+	//// Practise matrix transformation by mimicking the way we setup matrices in the `Create_Angry_Bird_Palace()` function.
+
+	void Create_Angry_Bird_Garden()
+	{
+		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
+
+		//// draw the three axes, comment them out if you don't need them
+		Add_Coord({ Vector3(0, 0.01, 0), Vector3(5, 0.01, 0) }, OpenGLColor(1, 0, 0, 1));	//// X axis
+		Add_Coord({ Vector3(0, 0, 0), Vector3(0, 5, 0) }, OpenGLColor(0, 1, 0, 1));	//// Y axis
+		Add_Coord({ Vector3(0, 0.01, 0), Vector3(0, 0.01, 5) }, OpenGLColor(0, 0, 1, 1));	//// Z zxis
+
+		//// draw the ground, comment them out if you don't need them
+		Add_Ground();
+
+		/* Your implementation ends. */
 	}
 
 	//////////////////////////////////////////////////////////////
 	//// The following functions are auxiliary functions to add mesh objects into the scene
 	//////////////////////////////////////////////////////////////
-	
+
 	//// This function adds a mesh object from an obj file
 	int Add_Obj_Mesh_Object(std::string obj_file_name)
 	{
@@ -233,11 +257,10 @@ public:
 	}
 
 	//// This function adds a mesh object from an .obj file and allows the user to specify its model matrix
-	OpenGLTriangleMesh* Add_Tranformable_Obj_From_File(std::string file_name, OpenGLColor color = OpenGLColor::White())
+	OpenGLTriangleMesh* Add_Obj_Mesh_Object_From_File(std::string file_name, OpenGLColor color = OpenGLColor::White())
 	{
 		int obj_idx = Add_Obj_Mesh_Object(file_name);
 		auto obj = mesh_object_array[obj_idx];
-		obj->use_model_matrix = true; // enable model matrix to be set to shader
 		obj->color = color; // set color
 
 		obj->Add_Shader_Program(OpenGLShaderLibrary::Get_Shader("a3_shading"));
@@ -252,20 +275,19 @@ public:
 	OpenGLTriangleMesh* Add_Cube(float length = 1, OpenGLColor color = OpenGLColor::White()) {
 		auto obj = Add_Interactive_Object<OpenGLTriangleMesh>();
 		mesh_object_array.push_back(obj);
-		obj->use_model_matrix = true; // enable model matrix to be set to shader
 		obj->color = color; // set color
 		// set up vertices and elements
-		std::vector<Vector3> vertices{Vector3(0,0,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,1,0), Vector3(0,0,1),Vector3(1,0,1),Vector3(0,1,1),Vector3(1,1,1)};
-		std::vector<Vector3i> elements{Vector3i(4,5,7),Vector3i(4,7,6),
+		std::vector<Vector3> vertices{ Vector3(0,0,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,1,0), Vector3(0,0,1),Vector3(1,0,1),Vector3(0,1,1),Vector3(1,1,1) };
+		std::vector<Vector3i> elements{ Vector3i(4,5,7),Vector3i(4,7,6),
 										Vector3i(5,1,7),Vector3i(7,1,3),
 										Vector3i(2,3,1),Vector3i(0,2,1),
 										Vector3i(6,2,4),Vector3i(2,0,4),
 										Vector3i(2,6,3),Vector3i(6,7,3),
-										Vector3i(0,1,4),Vector3i(1,5,4)};
-		for (auto& v3 : vertices) {v3 -= Vector3(0.5, 0.5, 0.5); v3 *= length;};
+										Vector3i(0,1,4),Vector3i(1,5,4) };
+		for (auto& v3 : vertices) { v3 -= Vector3(0.5, 0.5, 0.5); v3 *= length; };
 		obj->mesh.Vertices() = vertices;
 		obj->mesh.Elements() = elements;
-		
+
 		obj->Add_Shader_Program(OpenGLShaderLibrary::Get_Shader("a3_shading"));
 		Set_Polygon_Mode(obj, PolygonMode::Fill);
 		Set_Shading_Mode(obj, ShadingMode::A2);
@@ -301,18 +323,10 @@ public:
 		std::vector<Vector3> pts;
 		std::vector<Vector2i> eles;
 		for (int i = -10; i <= 10; i++) {
-			if (i == 0) {
-				pts.push_back(Vector3(i, 0, -10));
-				pts.push_back(Vector3(i, 0, 0));
-				pts.push_back(Vector3(-10, 0, i));
-				pts.push_back(Vector3(0, 0, i));
-			}
-			else {
-				pts.push_back(Vector3(i, 0, -10));
-				pts.push_back(Vector3(i, 0, 10));
-				pts.push_back(Vector3(-10, 0, i));
-				pts.push_back(Vector3(10, 0, i));
-			}
+			pts.push_back(Vector3(i, 0, -10));
+			pts.push_back(Vector3(i, 0, 10));
+			pts.push_back(Vector3(-10, 0, i));
+			pts.push_back(Vector3(10, 0, i));
 		}
 		for (int i = 0; i < pts.size(); i += 2) {
 			eles.push_back(Vector2i(i, i + 1));
@@ -377,11 +391,11 @@ public:
 	}
 };
 
-int main(int argc,char* argv[])
+int main(int argc, char* argv[])
 {
 	MyDriver driver;
 	driver.Initialize();
-	driver.Run();	
+	driver.Run();
 }
 
 #endif
