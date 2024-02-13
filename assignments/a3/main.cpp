@@ -132,10 +132,10 @@ public:
 		auto tower = Add_Obj_Mesh_Object_From_File("tower.obj", OpenGLColor(.0f, .5f, .5f, 1.f));
 		{
 			Matrix4f r;
-			r << cos(pi*.25f), 0., sin(pi*.25f), 0.,
-					0., 1., 0., 0.,
-					-sin(pi*.25f), 0., cos(pi*.25f), 0.,
-					0., 0., 0., 1.;
+			r << cos(pi*.25f), 0., -sin(pi*.25f), 0.,
+				0., 1., 0., 0.,
+				sin(pi*.25f), 0., cos(pi*.25f), 0.,
+				0., 0., 0., 1.;
 
 			Matrix4f t;
 			t << 2., 0., 0., -6.,
@@ -213,12 +213,12 @@ public:
 
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		for (int i = 0; i < 5; i++) {
-			auto cube1 = Add_Cube(1.f, OpenGLColor(0.1f, 0.1f, 0.1f, 1.f));
+			auto cube1 = Add_Cube(1.f, OpenGLColor(.9f, .9f, .9f, 1.f));
 			{
 				Matrix4f t;
 				t << 1., 0., 0., 0.,
-					0., 1., 0., 0.,
-					0., 0., 1., 0.,
+					0., 0.1, 0., 0.,
+					0., 0., 0.5, (3. + i),
 					0., 0., 0., 1.;
 				cube1->Set_Model_Matrix(t);
 			}
@@ -241,15 +241,22 @@ public:
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		std::vector<float> time = { 0.2, 0.5, 0.8, 1.1, 1.4, 1.7 };
 		int bird_num = 6;
+		float bird_angle = pi * (150./180.);
 		for (int i = 0; i < bird_num; i++) {
 			auto bird = Add_Obj_Mesh_Object_From_File("bird.obj", OpenGLColor(1.f, 0.2f, 0.f, 1.f));
 			{
+				Matrix4f r;
+				r << cos(bird_angle*time[i]), sin(bird_angle*time[i]), 0., 0.,
+						-sin(bird_angle*time[i]), cos(bird_angle*time[i]), 0., 0.,
+						0., 0., 1., 0.,
+						0., 0., 0., 1.;
+	
 				Matrix4f t;
-				t << 1., 0., 0., 0.,
-					0., 1., 0., 0.,
+				t << 1., 0., 0., (-5. + 5*time[i]),
+					0., 1., 0., (9.8*time[i] - 0.5*9.8*time[i]*time[i]),
 					0., 0., 1., 0.,
 					0., 0., 0., 1.;
-				bird->Set_Model_Matrix(t);
+				bird->Set_Model_Matrix(t*r);
 			}
 		}
 		/* Your implementation ends. */
