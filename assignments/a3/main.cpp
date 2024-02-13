@@ -69,6 +69,7 @@ public:
 		//// draw the ground
 		Add_Ground();
 
+		float pi = 3.1415927f;
 		//// Step 1: add the castle by reading the model from "castle.obj" 
 		//// The model needs to undergo the following transform operations in sequence: 
 		//// (1) rotate *counterclockwisely* around the y-axis by 90 degrees, 
@@ -80,13 +81,19 @@ public:
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		auto castle = Add_Obj_Mesh_Object_From_File("castle.obj", OpenGLColor(.6f, .6f, .6f, 1.f));
 		{
-			Matrix4f t;
-			t << 1., 0., 0., 0.,
-				0., 1., 0., 0.,
-				0., 0., 1., 0.,
-				0., 0., 0., 1.;
+			Matrix4f r;
+			r << cos(pi*.5f), 0., sin(pi*.5f), 0.,
+					0., 1., 0., 0.,
+					-sin(pi*.5f), 0., cos(pi*.5f), 0.,
+					0., 0., 0., 1.;
 
-			castle->Set_Model_Matrix(t);
+			Matrix4f t;
+			t << 5., 0., 0., 0.,
+				 0., 5., 0., 1.3,
+				 0., 0., 5., 0.,
+				 0., 0., 0., 1.;
+
+			castle->Set_Model_Matrix(t*r);
 		}
 		/* Your implementation ends. */
 
@@ -99,13 +106,19 @@ public:
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		auto axes = Add_Obj_Mesh_Object_From_File("axes.obj", OpenGLColor(.9f, .5f, .0f, 1.f));
 		{
-			Matrix4f t;
-			t << 1., 0., 0., 0.,
-				0., 1., 0., 0.,
-				0., 0., 1., 0.,
-				0., 0., 0., 1.;
+			Matrix4f r;
+			r << cos(pi*.5f), 0., sin(pi*.5f), 0.,
+					0., 1., 0., 0.,
+					-sin(pi*.5f), 0., cos(pi*.5f), 0.,
+					0., 0., 0., 1.;
 
-			axes->Set_Model_Matrix(t);
+			Matrix4f t;
+			t << 2., 0., 0., 6.,
+				 0., 2., 0., 1.,
+				 0., 0., 2., 0.,
+				 0., 0., 0., 1.;
+
+			axes->Set_Model_Matrix(t*r);
 		}
 		/* Your implementation ends. */
 
@@ -118,13 +131,19 @@ public:
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		auto tower = Add_Obj_Mesh_Object_From_File("tower.obj", OpenGLColor(.0f, .5f, .5f, 1.f));
 		{
-			Matrix4f t;
-			t << 1., 0., 0., 0.,
-				0., 1., 0., 0.,
-				0., 0., 1., 0.,
-				0., 0., 0., 1.;
+			Matrix4f r;
+			r << cos(pi*.25f), 0., sin(pi*.25f), 0.,
+					0., 1., 0., 0.,
+					-sin(pi*.25f), 0., cos(pi*.25f), 0.,
+					0., 0., 0., 1.;
 
-			tower->Set_Model_Matrix(t);
+			Matrix4f t;
+			t << 2., 0., 0., -6.,
+				 0., 6., 0., 3.,
+				 0., 0., 2., 0.,
+				 0., 0., 0., 1.;
+
+			tower->Set_Model_Matrix(t*r);
 		}
 		/* Your implementation ends. */
 
@@ -136,15 +155,23 @@ public:
 
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		int tree_num = 24;
+		float incr = (pi*2) / tree_num;
 		for (int i = 0; i < tree_num; i++) {
 			auto tree = Add_Obj_Mesh_Object_From_File("tree1.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
 			{
 				Matrix4f t;
-				t << 1., 0., 0., 0.,
-					0., 1., 0., 0.,
+				t << 1., 0., 0., 8.,
+					0., 1., 0., 0.5,
 					0., 0., 1., 0.,
 					0., 0., 0., 1.;
-				tree->Set_Model_Matrix(t);
+				
+				Matrix4f r;
+				r << cos(i*incr), 0., sin(i*incr), 0.,
+						0., 1., 0., 0.,
+						-sin(i*incr), 0., cos(i*incr), 0.,
+						0., 0., 0., 1.;
+
+				tree->Set_Model_Matrix(r*t);
 			}
 		}
 		/* Your implementation ends. */
@@ -157,15 +184,23 @@ public:
 
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 		int tree2_num = 36;
+		float incr2 = (pi*2) / tree2_num;
 		for (int i = 0; i < tree2_num; i++) {
 			auto tree = Add_Obj_Mesh_Object_From_File("tree2.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
 			{
 				Matrix4f t;
-				t << 1., 0., 0., 0.,
-					0., 1., 0., 0.,
+				t << 1., 0., 0., 10.,
+					0., 1., 0., 0.5,
 					0., 0., 1., 0.,
 					0., 0., 0., 1.;
-				tree->Set_Model_Matrix(t);
+				
+				Matrix4f r;
+				r << cos(i*incr2), 0., sin(i*incr2), 0.,
+						0., 1., 0., 0.,
+						-sin(i*incr2), 0., cos(i*incr2), 0.,
+						0., 0., 0., 1.;
+				
+				tree->Set_Model_Matrix(r*t);
 			}
 		}
 		/* Your implementation ends. */

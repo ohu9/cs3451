@@ -70,26 +70,26 @@ public:
 		Add_Ground();
 
 		// add castle with a single matrix
-		auto castle = Add_Tranformable_Obj_From_File("castle.obj", OpenGLColor(.5f, .5f, .5f, 1.f));
+		/*auto castle = Add_Tranformable_Obj_From_File("castle.obj", OpenGLColor(.5f, .5f, .5f, 1.f));
 		{
 			Matrix4f t;
-			t << 10., 0., 0., 0.,
-				 0., 5., 0., 1.3,
+			t << 6., 0., 0., 0.,
+				 0., 5., 0., 1.,
 				 0., 0., 2., 0.,
 				 0., 0., 0., 1.;
 			castle->Set_Model_Matrix(t);
-		}
+		}*/
 		
 		// add castle with matrix multiplications
-		/*
+		
 		auto castle = Add_Tranformable_Obj_From_File("castle.obj",OpenGLColor(.5f,.5f,.5f,1.f));
 		{
 			Matrix4f t;
-			t << 1., 0., 0., 0.,
-				 0., 1., 0., 1.3,
-				 0., 0., 1., 0.,
+			t << 8., 0., 0., 0.,
+				 0., 8., 0., -.4,
+				 0., 0., 8., 0.,
 				 0., 0., 0., 1.;
-			float angle = 3.1415927f * .5f;
+			float angle = 3.1415927f * .25f;
 
 			Matrix4f r;
 			r << cos(angle), 0., sin(angle), 0.,
@@ -97,11 +97,11 @@ public:
 				-sin(angle), 0., cos(angle), 0.,
 				0., 0., 0., 1.;
 
-			Matrix4f transf = r;
+			Matrix4f transf = t*r;
 
-			castle->Set_Model_Matrix(r);
+			castle->Set_Model_Matrix(transf);
 		}
-		*/
+		
 		
 	}
 
