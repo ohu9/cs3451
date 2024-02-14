@@ -270,14 +270,110 @@ public:
 		/* Your implementation starts. You may add/remove/edit any part of the code in the following. */
 
 		//// draw the three axes, comment them out if you don't need them
-		Add_Coord({ Vector3(0, 0.01, 0), Vector3(5, 0.01, 0) }, OpenGLColor(1, 0, 0, 1));	//// X axis
-		Add_Coord({ Vector3(0, 0, 0), Vector3(0, 5, 0) }, OpenGLColor(0, 1, 0, 1));	//// Y axis
-		Add_Coord({ Vector3(0, 0.01, 0), Vector3(0, 0.01, 5) }, OpenGLColor(0, 0, 1, 1));	//// Z zxis
+		// Add_Coord({ Vector3(0, 0.01, 0), Vector3(5, 0.01, 0) }, OpenGLColor(1, 0, 0, 1));	//// X axis
+		// Add_Coord({ Vector3(0, 0, 0), Vector3(0, 5, 0) }, OpenGLColor(0, 1, 0, 1));	//// Y axis
+		// Add_Coord({ Vector3(0, 0.01, 0), Vector3(0, 0.01, 5) }, OpenGLColor(0, 0, 1, 1));	//// Z zxis
 
 		//// draw the ground, comment them out if you don't need them
 		Add_Ground();
 
-		/* Your implementation ends. */
+		float pi = 3.1415927f;
+
+		int layers = 10;
+		float bird_angle = pi/layers;
+		for (int l = 0; l < layers; l++) {
+			Matrix4f pivot;
+			pivot << cos(pi/2. + bird_angle*l), sin(pi/2. + bird_angle*l), 0., 0.,
+					-sin(pi/2. + bird_angle*l), cos(pi/2. + bird_angle*l), 0., 0.,
+					0., 0., 1., 0.,
+					0., 0., 0., 1.;
+			Matrix4f outwards;
+			outwards << cos(pi/2.), 0., sin(pi/2.), 0.,
+					0., 1., 0., 0.,
+					-sin(pi/2.), 0., cos(pi/2.), 0.,
+					0., 0., 0., 1.;
+
+			Matrix4f t;
+					t << 1., 0., 0., (9-l)*.8,
+						0., 1., 0., l*.7,
+						0., 0., 1., 0.,
+						0., 0., 0., 1.;
+
+			for (int b = 0; b < 22; b++) {
+
+				auto bird = Add_Obj_Mesh_Object_From_File("bird.obj", OpenGLColor(0.1f*l, 0.05f*l, 0.2f*l, 1.f));
+				{
+					float incr = (pi*2) / 22;
+					Matrix4f r;
+					r << cos(b*incr), 0., sin(b*incr), 0.,
+							0., 1., 0., 0.,
+							-sin(b*incr), 0., cos(b*incr), 0.,
+							0., 0., 0., 1.;
+
+					bird->Set_Model_Matrix(r*t*outwards*pivot);
+				}
+			}
+		}
+		for (int i = 1; i <= 6; i++) {
+			Matrix4f s;
+			s << i, 0., 0., .0,
+				 0., i, 0., 0.,
+				 0., 0., i, .0,
+				 0., 0., 0., 1.;
+
+			for (int j = 1; j <= 4; j++) {
+				auto grass = Add_Obj_Mesh_Object_From_File("./garden/grass4.obj", OpenGLColor(0.f, 1.1f-(i/10.), 0.f, 1.f));
+				{
+					Matrix4f r;
+					r << cos((pi/2)*j), 0., sin((pi/2)*j), 0.,
+							0., 1., 0., 0.,
+							-sin((pi/2)*j), 0., cos((pi/2)*j), 0.,
+							0., 0., 0., 1.;
+					
+					Matrix4f t;
+					t << 2., 0., 0., .8,
+						0., 0.1, 0., 0.,
+						0., 0., 2., -.8,
+						0., 0., 0., 1.;
+					grass->Set_Model_Matrix(s*r*t);
+				}
+			}
+		}
+
+		auto vase = Add_Obj_Mesh_Object_From_File("./garden/grass6.obj", OpenGLColor(0.f, 1., 1.f, 1.f));
+		{
+			Matrix4f t;
+			t << 2., 0., 0., 0.,
+				0., -2., 0., 2.,
+				0., 0., 2., 0.,
+				0., 0., 0., 1.;
+			vase->Set_Model_Matrix(t);
+		}
+
+		auto vase2 = Add_Obj_Mesh_Object_From_File("./garden/grass6.obj", OpenGLColor(0.f, 1., 1.f, 1.f));
+		{
+			Matrix4f t;
+			t << 2., 0., 0., 0.,
+				0., 2., 0., 2.5,
+				0., 0., 2., 0.,
+				0., 0., 0., 1.;
+			vase2->Set_Model_Matrix(t);
+		}
+
+
+		// auto grass2 = Add_Obj_Mesh_Object_From_File("./garden/grass3.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
+		// for (int i = 1; i < 7; i++) {
+		// 	{
+		// 		Matrix4f t;
+		// 		t << 1.5, 0., 0., i,
+		// 			0., 0.1, 0., 0.,
+		// 			0., 0., 1.5, 0.,
+		// 			0., 0., 0., 1.;
+		// 		grass->Set_Model_Matrix(t);
+		// 	}
+		// }
+
+			/* Your implementation ends. */
 	}
 
 	//////////////////////////////////////////////////////////////
