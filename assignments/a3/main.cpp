@@ -317,7 +317,7 @@ public:
 		for (int i = 1; i <= 6; i++) {
 			Matrix4f s;
 			s << i, 0., 0., .0,
-				 0., i, 0., 0.,
+				 0., .5, 0., 0.,
 				 0., 0., i, .0,
 				 0., 0., 0., 1.;
 
@@ -359,19 +359,6 @@ public:
 				0., 0., 0., 1.;
 			vase2->Set_Model_Matrix(t);
 		}
-
-
-		// auto grass2 = Add_Obj_Mesh_Object_From_File("./garden/grass3.obj", OpenGLColor(0.f, 1.f, 0.f, 1.f));
-		// for (int i = 1; i < 7; i++) {
-		// 	{
-		// 		Matrix4f t;
-		// 		t << 1.5, 0., 0., i,
-		// 			0., 0.1, 0., 0.,
-		// 			0., 0., 1.5, 0.,
-		// 			0., 0., 0., 1.;
-		// 		grass->Set_Model_Matrix(t);
-		// 	}
-		// }
 
 			/* Your implementation ends. */
 	}
