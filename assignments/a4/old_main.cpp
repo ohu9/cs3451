@@ -1,14 +1,14 @@
 //#####################################################################
 // Main
-// Dartmouth COSC 77/177 Computer Graphics, starter code
-// Contact: Bo Zhu (bo.zhu@dartmouth.edu)
+// CS3451 Computer Graphics Starter Code
+// Contact: Bo Zhu (bo.zhu@gatech.edu)
 //#####################################################################
 #include <iostream>
 #include <random>
 #include <vector>
 #include <algorithm>
 #include <unordered_set>
-#include "Common.h"
+
 #include "OpenGLMesh.h"
 #include "OpenGLCommon.h"
 #include "OpenGLWindow.h"
@@ -34,7 +34,7 @@ public:
 		////Goto OpenGLShaderProgrammcpp Line 239 and 240, change the two colors, and you will get a different background.
 		draw_bk=true;						////this flag specifies a customized way to draw the background. If you turn it off, there is no background.
 		draw_axes=false;					////if you don't like the axes, turn them off!
-		startTime = clock();
+		startTime=clock();
 		OpenGLViewer::Initialize();
 	}
 
@@ -88,10 +88,6 @@ public:
 		}
 	}
 
-	Vector3 crossProduct(Vector3 a, Vector3 b) {
-		return Vector3((a[1]*b[2] - a[2]*b[1]), (a[2]*b[0] - a[0]*b[2]), (a[0]*b[1] - a[1]*b[0]));
-	}
-
 	////This function demonstrates how to manipulate the color and normal arrays of a mesh on the CPU end.
 	////The updated colors and normals will be sent to GPU for rendering automatically.
 	void Update_Vertex_Color_And_Normal_For_Mesh_Object(OpenGLTriangleMesh* obj)
@@ -108,7 +104,7 @@ public:
 		////NOTICE: This code updates the vertex color array on the CPU end. The array will then be sent to GPU and read it the vertex shader as v_color.
 		////You don't need to implement the CPU-GPU data transfer code.
 		for(int i=0;i<vn;i++){
-			vtx_color[i]=Vector4f(1.,1.,0.,1.);	////specify color for each vertex
+			vtx_color[i]=Vector4f(0.,1.,0.,1.);	////specify color for each vertex
 		}
 
 		std::vector<Vector3>& vtx_normal=obj->vtx_normal;
@@ -123,27 +119,13 @@ public:
 		}	
 
 		////TODO [Step 1]: Comment the default implementation and uncomment the following function and implement it to calculate mesh normals.
-		Update_Vertex_Normal(vertices,elements,vtx_normal);
+		//Update_Vertex_Normal(vertices,elements,vtx_normal);
 	}
 
 	////TODO [Step 1]: implement your function to update vertex normals
 	void Update_Vertex_Normal(const std::vector<Vector3>& vertices,const std::vector<Vector3i>& elements,std::vector<Vector3>& normals)
 	{
 		////TODO [Step 1]: your implementation to calculate the normal vector for each mesh vertex
-		std::cout << "\nvn: \n" << vertices.size();
-		std::cout << "\nen: \n" << elements.size();
-		std::cout << "\nnn: \n" << normals.size();
-		std::cout << "\nvertices[0]: \n" << vertices[0];
-		std::cout << "\nelements[0]: \n" << elements[0];
-		// std::cout << "\nelements[1]: \n" << elements[1];
-		// std::cout << "\nelements[2]: \n" << elements[2];
-		std::cout << "\nvertices[508]: \n" << vertices[508];
-		std::cout << "\nelements[508]: \n" << elements[508];
-		std::cout << "\nelements[584]: \n" << elements[584];
-		// normals[0]=Vector3(vertices[0][0],vertices[0][1],vertices[0][2]);
-		// std::cout << "\nnormals[0]: \n" << normals[0];
-		// std::cout << "\nnormals[1]: \n" << normals[1];
-		// std::cout << "\nnormals[2]: \n" << normals[2];
 	}
 
 	virtual void Initialize_Data()
@@ -153,13 +135,6 @@ public:
 			int obj_idx=Add_Sphere_Object();
 			auto obj=mesh_object_array[obj_idx];
 			Update_Vertex_Color_And_Normal_For_Mesh_Object(obj);		
-		}
-
-		{
-			int obj_idx=Add_Sphere_Object(.1);
-			auto obj=mesh_object_array[obj_idx];
-			Update_Vertex_Color_And_Normal_For_Mesh_Object(obj);
-			Translate_Vertex_Position_For_Mesh_Object(obj,Vector3(2.,0.,0.));
 		}
 
 		////Add an obj mesh
