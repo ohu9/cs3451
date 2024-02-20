@@ -46,8 +46,7 @@ vec4 shading_normal()
     vec3 _normal = normalize(vtx_normal);
     
     /* your implementation starts */
-
-    return vec4(0.f,0.f,0.f,1.f);
+    return vec4(_normal.x,_normal.y,_normal.z,1.f)/2 + vec4(.5, .5, .5, 0);
     /* your implementation ends */
 }
 
@@ -65,8 +64,8 @@ vec4 shading_normal()
 vec4 shading_ambient(Light light) 
 {
     /* your implementation starts */
-    
-    return vec4(0.f,0.f,0.f,1.f);
+    vec3 res = ka*light.Ia;
+    return vec4(res.x, res.y, res.z, 1.f);
     /* your implementation ends */
 }
 
@@ -87,8 +86,10 @@ vec4 shading_ambient(Light light)
 vec4 shading_lambertian(Light light, vec3 p, vec3 s, vec3 n) 
 {
     /* your implementation starts */
-
-    return vec4(0.f,0.f,0.f,1.f);
+    vec3 l = normalize(s - p);
+    float m = max(dot(l, n), 0.f);
+    vec3 lambert = ka*light.Ia + (kd*light.Id)*m;
+    return vec4(lambert.x, lambert.y, lambert.z,1.f);
     /* your implementation ends */
 }
 
@@ -110,8 +111,15 @@ vec4 shading_lambertian(Light light, vec3 p, vec3 s, vec3 n)
 vec4 shading_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n) 
 {
     /* your implementation starts */
+    vec3 l = normalize(s - p);
+    float diff = max(dot(l,n), 0.f);
     
-    return vec4(0.f,0.f,0.f,1.f);
+    vec3 v = normalize(e - p);
+    vec3 r = -1*reflect(l, n); //l*-1 + 2*d_dot*n;
+    float spec = pow(max(dot(v,r), 0.f), shininess);
+
+    vec3 phong = ka*light.Ia + kd*light.Id*diff + ks*light.Is*spec;
+    return vec4(phong.x, phong.y, phong.z,1.f);
     /* your implementation ends */
 }
 
@@ -166,21 +174,21 @@ void main()
     //// Your implementation will be in the function shading_normal
     //// Uncomment the following line to call the function
 
-    // frag_color = shading_ambient(light1);
+    frag_color = shading_ambient(light1);
 
     //// Step 3: Lambertian shading
     //// Your task is to implement the Lambertian shading function
     //// Your implementation will be in the function shading_lambertian
     //// Uncomment the following line to call the function
 
-    // frag_color = shading_lambertian(light1, p, s1, n);
+    frag_color = shading_lambertian(light1, p, s1, n);
 
     //// Step 4: Phong shading
     //// Your task is to implement the Phong shading function
     //// Your implementation will be in the function shading_phong
     //// Uncomment the following line to call the function
 
-    // frag_color = shading_phong(light1, e, p, s1, n);
+    frag_color = shading_phong(light1, e, p, s1, n);
 
     //// Step 5: multiple lights
     //// By default we calculate the contribution from light1. 

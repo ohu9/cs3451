@@ -151,6 +151,12 @@ int main(int argc, char* argv[]) {
     ShaderDriver driver;
     driver.Initialize();
     driver.Run();
+    vec3 s = vec3(1, 1, 1);
+    vec3 n = vec3(2, 2, 2);
+    // float prod = s.x*n.x + s.y*n.y + s.z*n.z;
+    float d = std::pow(2, 4);
+    std::cout << d;
+
 }
 
 #endif
