@@ -115,7 +115,7 @@ vec4 shading_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n)
     float diff = max(dot(l,n), 0.f);
     
     vec3 v = normalize(e - p);
-    vec3 r = -1*reflect(l, n); //l*-1 + 2*d_dot*n;
+    vec3 r = -1*reflect(l, n);
     float spec = pow(max(dot(v,r), 0.f), shininess);
 
     vec3 phong = ka*light.Ia + kd*light.Id*diff + ks*light.Is*spec;
@@ -140,8 +140,8 @@ Light get_spinny_light(Light light)
     /* your implementation starts */
 
     mat4 light_model_mtx = 
-        mat4(1., 0., 0., 0., 
-             0., 1., 0., 0., 
+        mat4(cos(theta), sin(theta), 0., 0., 
+             -1*sin(theta), cos(theta), 0., 0., 
              0., 0., 1., 0., 
              0., 0., 0., 1.);
     
@@ -198,9 +198,12 @@ void main()
     //// Uncomment the following line, declare a new light, and add its contribution to frag_color.
 
     /* Your implementation starts here */
+    const Light light2 = Light(/*position*/ vec3(-3, 1, 3), 
+                                /*Ia*/ vec3(0.05, 0.02, 0.03), 
+                                /*Id*/ vec3(0.4, 0.2, 0.3), 
+                                /*Is*/ vec3(0.4, 0.2, 0.3));
     
-    
-    // frag_color = shading_phong(light1, e, p, s1, n);
+    frag_color = shading_phong(light1, e, p, s1, n) + shading_phong(light2, e, p, light2.position, n);
     
     /* Your implementation ends here */
 
@@ -209,8 +212,8 @@ void main()
     //// Your implementation will take place in the function get_spinny_light
     //// After implementing rotation in get_spinny_light, uncomment the following two lines and press key 'p' to start the animation
     
-    // Light spinnyLight = get_spinny_light(light1);
-    // frag_color = shading_phong(spinnyLight, e, p, spinnyLight.position, n);
+    //Light spinnyLight = get_spinny_light(light1);
+    //frag_color = shading_phong(spinnyLight, e, p, spinnyLight.position, n);
 
     //// Step 7: your customized lighting effect
     //// Implement your customized lighting effects on your customized mesh objects 
