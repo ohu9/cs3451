@@ -81,7 +81,21 @@ public:
 
         //// Step 7: Add your customized mesh objects and specify their transform and material properties by mimicking Create_Bunny_Scene() 
         /* Your implementation starts */
+        Create_Background(OpenGLColor(0.1f, 0.1f, 0.1f, 1.f), OpenGLColor(0.1f, 0.1f, .3f, 1.f));   //// add background
 
+        auto obj = Add_Obj_Mesh_Object("key.obj");
+        //// set transform
+        Matrix4f t3;
+        t3 << .1, 0., 0., 0.,
+            0., .1, 0., 0.,
+            0., 0., .1, 0.,
+            0., 0., 0., 1.;
+        obj->Set_Model_Matrix(t3);
+        //// set material properties
+        obj->Set_Ka(Vector3f(0.9f, 0.9f, 0.f));
+        obj->Set_Kd(Vector3f(92.f/255, 92.f/255, 92.f/255));
+        obj->Set_Ks(Vector3f(5.f, 5.f, 5.f));
+        obj->Set_Shininess(100.f);
         /* Your implementation ends */
     }
 
@@ -89,7 +103,7 @@ public:
     virtual void Initialize_Data()
     {
         Create_Bunny_Scene();               //// TODO: comment out this line for your customized scene
-        //Create_Shining_Scene();           //// TODO: uncomment this line for your customized scene
+        // Create_Shining_Scene();           //// TODO: uncomment this line for your customized scene
 
         OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a4_vert.vert", "a4_frag.frag", "a4_shader");
         for (auto& mesh_obj : mesh_object_array) {

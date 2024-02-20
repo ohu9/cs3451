@@ -174,21 +174,21 @@ void main()
     //// Your implementation will be in the function shading_normal
     //// Uncomment the following line to call the function
 
-    frag_color = shading_ambient(light1);
+    // frag_color = shading_ambient(light1);
 
     //// Step 3: Lambertian shading
     //// Your task is to implement the Lambertian shading function
     //// Your implementation will be in the function shading_lambertian
     //// Uncomment the following line to call the function
 
-    frag_color = shading_lambertian(light1, p, s1, n);
+    // frag_color = shading_lambertian(light1, p, s1, n);
 
     //// Step 4: Phong shading
     //// Your task is to implement the Phong shading function
     //// Your implementation will be in the function shading_phong
     //// Uncomment the following line to call the function
 
-    frag_color = shading_phong(light1, e, p, s1, n);
+    // frag_color = shading_phong(light1, e, p, s1, n);
 
     //// Step 5: multiple lights
     //// By default we calculate the contribution from light1. 
@@ -202,8 +202,8 @@ void main()
                                 /*Ia*/ vec3(0.05, 0.02, 0.03), 
                                 /*Id*/ vec3(0.4, 0.2, 0.3), 
                                 /*Is*/ vec3(0.4, 0.2, 0.3));
-    
-    frag_color = shading_phong(light1, e, p, s1, n) + shading_phong(light2, e, p, light2.position, n);
+
+    // frag_color = shading_phong(light1, e, p, s1, n) + shading_phong(light2, e, p, light2.position, n);
     
     /* Your implementation ends here */
 
@@ -212,8 +212,8 @@ void main()
     //// Your implementation will take place in the function get_spinny_light
     //// After implementing rotation in get_spinny_light, uncomment the following two lines and press key 'p' to start the animation
     
-    //Light spinnyLight = get_spinny_light(light1);
-    //frag_color = shading_phong(spinnyLight, e, p, spinnyLight.position, n);
+    // Light spinnyLight = get_spinny_light(light1);
+    // frag_color = shading_phong(spinnyLight, e, p, spinnyLight.position, n);
 
     //// Step 7: your customized lighting effect
     //// Implement your customized lighting effects on your customized mesh objects 
