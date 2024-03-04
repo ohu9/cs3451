@@ -92,7 +92,7 @@ vec4 shading_texture_with_color()
     vec2 uv = vtx_uv;           //// the uv coordinates you need to read texture values
 
     /* your implementation starts */
-    
+    color = texture(tex_color, uv);
 
     /* your implementation ends */
 
