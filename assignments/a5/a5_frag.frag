@@ -64,8 +64,16 @@ vec4 shading_texture_with_checkerboard()
     vec2 uv = vtx_uv;           //// the uv coordinates you need to calculate the checkerboard color
 
     /* your implementation starts */
-    
+    float cell_size = 14.;
 
+    // get the cell index in x and y axes
+    int ix = int(floor(cell_size*uv.x));
+    int iy = int(floor(cell_size*uv.y));
+
+    // set alternating fragment color to white
+    if (mod(ix + iy,2) == 0) {
+        color = vec3(1., 1., 1.);
+    }
     /* your implementation ends */
 
     return vec4(color, 1.0);
@@ -252,12 +260,12 @@ void main()
 {
     //// Step 1: Visualize UV Coordinates with Checkerboard
     //// Your task is to implement the shading_texture_with_checkerboard() function
-    frag_color = shading_texture_with_checkerboard();
+    // frag_color = shading_texture_with_checkerboard();
 
     //// Step 2: Read Color from Texture Sampler
     //// Your task is to implement the shading_texture_with_color() function
     //// Uncomment the following line to call the function (you might also need to comment out previous lines that assign frag_color)
-    // frag_color = shading_texture_with_color();
+    frag_color = shading_texture_with_color();
 
     //// Step 3: Phong Shading with Texture
     //// Your task is to implement the shading *shading_texture_with_phong()* function, that is called within shading_texture_with_lighting()
