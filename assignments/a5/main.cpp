@@ -56,8 +56,8 @@ public:
             sphere->Set_Shininess(128);
 
             //// initialize texture
-            Add_Textture_For_Mesh_Object(sphere, "earth_color.png", TexType::Color);
-            Add_Textture_For_Mesh_Object(sphere, "earth_normal.png", TexType::Normal);
+            Add_Texture_For_Mesh_Object(sphere, "earth_color.png", TexType::Color);
+            Add_Texture_For_Mesh_Object(sphere, "earth_normal.png", TexType::Normal);
         }
         
         //// initialize bunny
@@ -81,8 +81,8 @@ public:
             bunny->Set_Shininess(128.);
 
             //// initialize texture
-            Add_Textture_For_Mesh_Object(bunny, "bunny_color.jpg", TexType::Color);
-            Add_Textture_For_Mesh_Object(bunny, "bunny_normal.png", TexType::Normal);
+            Add_Texture_For_Mesh_Object(bunny, "bunny_color.jpg", TexType::Color);
+            Add_Texture_For_Mesh_Object(bunny, "bunny_normal.png", TexType::Normal);
         }
     }
 
@@ -92,6 +92,28 @@ public:
 
         //// Step 5: Add your customized mesh objects and specify their transform, material, and texture properties by mimicking Create_Bunny_Scene() 
         /* Your implementation starts */
+
+        //// initiailize mesh
+        auto obj = Add_Obj_Mesh_Object("sphere.obj");//Add_Obj_Mesh_Object("./textured_mesh/croissant/croissant.obj");
+        obj->name = "obj"; //// Must set name for the object
+
+        //// initialize transform
+        Matrix4f t;
+        t << 1, 0, 0, -1.5,
+            0, 1, 0, 0,
+            0, 0, 1, 0,
+            0, 0, 0, 1;
+        obj->Set_Model_Matrix(t);
+
+        //// initialize material
+        obj->Set_Ka(Vector3f(0.1, 0.1, 0.1));
+        obj->Set_Kd(Vector3f(0.7, 0.7, 0.7));
+        obj->Set_Ks(Vector3f(2, 2, 2));
+        obj->Set_Shininess(128);
+
+        //// initialize texture
+        Add_Texture_For_Mesh_Object(obj, "croissant.png", TexType::Color);
+        // Add_Texture_For_Mesh_Object(obj, "pumpkin_normal.png", TexType::Normal);
 
         /* Your implementation ends */
     }
@@ -144,7 +166,7 @@ public:
         return mesh_obj;
     }
 
-    void Add_Textture_For_Mesh_Object(OpenGLTriangleMesh *obj ,const std::string &texture_file_name, TexType type) 
+    void Add_Texture_For_Mesh_Object(OpenGLTriangleMesh *obj ,const std::string &texture_file_name, TexType type) 
     {
         if (type == TexType::Color)
             OpenGLTextureLibrary::Instance()->Add_Texture_From_File(texture_file_name, obj->name + "_color");
