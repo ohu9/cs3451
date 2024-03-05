@@ -42,11 +42,11 @@ const Light light1 = Light(/*position*/ vec3(3, 1, 3),
                             /*Ia*/ vec3(0.1, 0.1, 0.1), 
                             /*Id*/ vec3(1.0, 1.0, 1.0), 
                             /*Is*/ vec3(0.5, 0.5, 0.5));
-const Light light2 = Light(/*position*/ vec3(0, 0, -5), 
+const Light light2 = Light(/*position*/ vec3(1, 0, -5), 
                             /*Ia*/ vec3(0.1, 0.1, 0.1), 
                             /*Id*/ vec3(0.9, 0.9, 0.9), 
                             /*Is*/ vec3(0.5, 0.5, 0.5)); 
-const Light light3 = Light(/*position*/ vec3(-5, 1, 3), 
+const Light light3 = Light(/*position*/ vec3(-5, 1, 3),
                             /*Ia*/ vec3(0.1, 0.1, 0.1), 
                             /*Id*/ vec3(0.9, 0.9, 0.9), 
                             /*Is*/ vec3(0.5, 0.5, 0.5));
@@ -167,9 +167,6 @@ vec3 calc_bitangent(vec3 N, vec3 T)
 
 mat3 calc_TBN_matrix(vec3 T, vec3 B, vec3 N) 
 {
-    // mat3 TBN = mat3(T.x, B.x, N.x,
-    //                 T.y, B.y, N.y,
-    //                 T.z, B.z, N.z);
     mat3 TBN = mat3(T, B, N);
     return TBN;
 }

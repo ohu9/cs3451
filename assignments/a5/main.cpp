@@ -88,40 +88,46 @@ public:
 
     void Create_Old_Object_Scene()
     {
-        Create_Background(OpenGLColor(0.1f, 0.1f, 0.1f, 1.f), OpenGLColor(0.1f, 0.1f, .3f, 1.f));   //// add background
+        Create_Background(OpenGLColor(0.3f, 0.2f, 0.1f, 1.f), OpenGLColor(0.7f, 0.6f, .3f, 1.f));   //// add background
 
         //// Step 5: Add your customized mesh objects and specify their transform, material, and texture properties by mimicking Create_Bunny_Scene() 
-        /* Your implementation starts */
 
-        //// initiailize mesh
-        auto obj = Add_Obj_Mesh_Object("sphere.obj");//Add_Obj_Mesh_Object("./textured_mesh/croissant/croissant.obj");
-        obj->name = "obj"; //// Must set name for the object
+        {
+            //// initiailize mesh
+            auto pumpkin = Add_Obj_Mesh_Object("./textured_mesh/pumpkin/pumpkin.obj");
+            pumpkin->name = "pumpkin"; //// Must set name for the object
 
-        //// initialize transform
-        Matrix4f t;
-        t << 1, 0, 0, -1.5,
-            0, 1, 0, 0,
-            0, 0, 1, 0,
-            0, 0, 0, 1;
-        obj->Set_Model_Matrix(t);
+            //// initialize transform
+            Matrix4f t;
+            t << 2.5, 0, 0, 0,
+                 0, 2.5, 0, 0,
+                 0, 0, 2.5, 0,
+                 0, 0, 0, 1;
+            
+            Matrix4f r;
+            r << cos(1.2), 0, -sin(1.2), 0,
+                 0, 1, 0, 0,
+                 sin(1.2), 0, cos(1.2), 0,
+                 0, 0, 0, 1;
+            pumpkin->Set_Model_Matrix(r*t);
 
-        //// initialize material
-        obj->Set_Ka(Vector3f(0.1, 0.1, 0.1));
-        obj->Set_Kd(Vector3f(0.7, 0.7, 0.7));
-        obj->Set_Ks(Vector3f(2, 2, 2));
-        obj->Set_Shininess(128);
+            //// initialize material
+            pumpkin->Set_Ka(Vector3f(0.2, 0.2, 0.2));
+            pumpkin->Set_Kd(Vector3f(0.7, 0.7, 0.7));
+            pumpkin->Set_Ks(Vector3f(0.35, 0.35, 0.35));
+            pumpkin->Set_Shininess(50);
 
-        //// initialize texture
-        Add_Texture_For_Mesh_Object(obj, "croissant.png", TexType::Color);
-        // Add_Texture_For_Mesh_Object(obj, "pumpkin_normal.png", TexType::Normal);
+            //// initialize texture
+            Add_Texture_For_Mesh_Object(pumpkin, "./textured_mesh/pumpkin/pumpkin.jpg", TexType::Color);
+            Add_Texture_For_Mesh_Object(pumpkin, "./textured_mesh/pumpkin/pumpkin_normal.png", TexType::Normal);
+        }
 
-        /* Your implementation ends */
     }
 
     virtual void Initialize_Data() 
     {
-        Create_Bunny_Scene();           //// TODO: comment out this line for your customized scene
-        // Create_Old_Object_Scene();   //// TODO: uncomment this line for your customized scene
+        // Create_Bunny_Scene();           //// TODO: comment out this line for your customized scene
+        Create_Old_Object_Scene();   //// TODO: uncomment this line for your customized scene
 
         ////initialize shader
         OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a5_vert.vert", "a5_frag.frag", "a5_shader");
