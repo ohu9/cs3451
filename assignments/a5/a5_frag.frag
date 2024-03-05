@@ -121,7 +121,7 @@ vec4 shading_texture_with_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n)
     vec3 v = normalize(e - p);
     vec3 r = -1*reflect(l, n);
 
-    vec3 phong = ka*light.Ia + (kd*light.Id*max(dot(l,n), 0.f))*tex_color + ks*light.Is*pow(max(dot(v,r), 0.f), shininess);
+    vec3 phong = ka*light.Ia + (kd*light.Id*max(dot(l,n), 0.))*tex_color + ks*light.Is*pow(max(dot(v,r), 0.f), shininess);
     /* your implementation ends */
 
     return vec4(phong, 1.f);
@@ -156,12 +156,7 @@ vec4 shading_texture_with_lighting()
 
 vec3 calc_bitangent(vec3 N, vec3 T) 
 {
-    vec3 B = vec3(0.0);     //// the bitangent vector you need to calculate
-
-    /* your implementation starts */
-    B = normalize(cross(N, T));
-    /* your implementation ends */
-    
+    vec3 B = normalize(cross(N, T));
     return B;
 }
 
@@ -172,13 +167,10 @@ vec3 calc_bitangent(vec3 N, vec3 T)
 
 mat3 calc_TBN_matrix(vec3 T, vec3 B, vec3 N) 
 {
-    mat3 TBN = mat3(0.0);   //// the TBN matrix you need to calculate
-
-    /* your implementation starts */
-
-
-    /* your implementation ends */
-
+    // mat3 TBN = mat3(T.x, B.x, N.x,
+    //                 T.y, B.y, N.y,
+    //                 T.z, B.z, N.z);
+    mat3 TBN = mat3(T, B, N);
     return TBN;
 }
 
@@ -192,14 +184,11 @@ mat3 calc_TBN_matrix(vec3 T, vec3 B, vec3 N)
 
 vec3 read_normal_texture() 
 {
-    vec3 normal = vec3(0.0);    //// the normal vector you need to update
+    // vec3 normal = vec3(0.0);    //// the normal vector you need to update
     vec2 uv = vtx_uv;           //// the uv coordinates you need to 
-
-    /* your implementation starts */
     
-
-    /* your implementation ends */
-
+    vec3 normal = texture(tex_normal, uv).xyz;
+    normal = normal*2 - vec3(1., 1., 1.);
     return normal;
 }
 
@@ -210,14 +199,9 @@ vec3 read_normal_texture()
 
 vec3 calc_perturbed_normal(mat3 TBN, vec3 normal) 
 {
-    vec3 perturbed_normal = vec3(0.0);
+    vec3 perturbed_normal = TBN * normal;
     
-    /* your implementation starts */
-
-
-    /* your implementation ends */
-    
-    return perturbed_normal;
+    return normalize(perturbed_normal);
 }
 
 /////////////////////////////////////////////////////
@@ -242,7 +226,11 @@ vec4 shading_texture_with_normal_mapping()
     vec3 perturbed_normal = vec3(0.0);  //// perturbed normal
 
     /* your implementation starts */
-    
+    vec3 B = calc_bitangent(N, T);
+    mat3 TBN = calc_TBN_matrix(T, B, N);
+    vec3 normal = read_normal_texture();
+    perturbed_normal = calc_perturbed_normal(TBN, normal);
+
 
     /* your implementation ends */
 
