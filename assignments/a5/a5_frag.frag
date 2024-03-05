@@ -63,7 +63,6 @@ vec4 shading_texture_with_checkerboard()
     vec3 color = vec3(0.0);     //// we set the default color to be black, update its value in your implementation below
     vec2 uv = vtx_uv;           //// the uv coordinates you need to calculate the checkerboard color
 
-    /* your implementation starts */
     float cell_size = 14.;
 
     // get the cell index in x and y axes
@@ -74,7 +73,6 @@ vec4 shading_texture_with_checkerboard()
     if (mod(ix + iy,2) == 0) {
         color = vec3(1., 1., 1.);
     }
-    /* your implementation ends */
 
     return vec4(color, 1.0);
 }
@@ -91,10 +89,7 @@ vec4 shading_texture_with_color()
     vec4 color = vec4(0.0);     //// we set the default color to be black, update its value in your implementation below
     vec2 uv = vtx_uv;           //// the uv coordinates you need to read texture values
 
-    /* your implementation starts */
     color = texture(tex_color, uv);
-
-    /* your implementation ends */
 
     return color;
 }
@@ -116,18 +111,20 @@ vec4 shading_texture_with_color()
 //// s: light source position (you may also use light.position)
 //// n: normal at the point
 /////////////////////////////////////////////////////
-
 vec4 shading_texture_with_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n) 
 {
     vec4 color = vec4(0.0);                                 //// we set the default color to be black, update its value in your implementation below
     vec3 tex_color = shading_texture_with_color().rgb;      //// the texture value read from your previously implemented function; you need to use this value in your phong shading model
     
     /* your implementation starts */
-    
+    vec3 l = normalize(s - p);
+    vec3 v = normalize(e - p);
+    vec3 r = -1*reflect(l, n);
 
+    vec3 phong = ka*light.Ia + (kd*light.Id*max(dot(l,n), 0.f))*tex_color + ks*light.Is*pow(max(dot(v,r), 0.f), shininess);
     /* your implementation ends */
 
-    return color;
+    return vec4(phong, 1.f);
 }
 
 //// This function calls your shading_texture_with_phong function with the three declared light sources
@@ -162,8 +159,7 @@ vec3 calc_bitangent(vec3 N, vec3 T)
     vec3 B = vec3(0.0);     //// the bitangent vector you need to calculate
 
     /* your implementation starts */
-    
-
+    B = normalize(cross(N, T));
     /* your implementation ends */
     
     return B;
@@ -265,7 +261,7 @@ void main()
     //// Step 2: Read Color from Texture Sampler
     //// Your task is to implement the shading_texture_with_color() function
     //// Uncomment the following line to call the function (you might also need to comment out previous lines that assign frag_color)
-    frag_color = shading_texture_with_color();
+    // frag_color = shading_texture_with_color();
 
     //// Step 3: Phong Shading with Texture
     //// Your task is to implement the shading *shading_texture_with_phong()* function, that is called within shading_texture_with_lighting()
@@ -276,5 +272,5 @@ void main()
     //// Your tasks are to implement the five functions as mentioned below that are used to calcuate perturbed normal vector in the shading_texture_with_normal_mapping() function: 
     //// (1) calc_bitangent(), (2) calc_TBN_matrix(), (3) read_normal_texture(), (4) calc_perturbed_normal(), and (5) shading_texture_with_normal_mapping()
     //// Uncomment the following line to call the function (you might also need to comment out previous lines that assign frag_color)
-    // frag_color = shading_texture_with_normal_mapping();
+    frag_color = shading_texture_with_normal_mapping();
 }

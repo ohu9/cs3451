@@ -119,7 +119,7 @@ vec4 shading_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n)
     float spec = pow(max(dot(v,r), 0.f), shininess);
 
     vec3 phong = ka*light.Ia + kd*light.Id*diff + ks*light.Is*spec;
-    return vec4(phong.x, phong.y, phong.z,1.f);
+    return vec4(phong, 1.f);
     /* your implementation ends */
 }
 
