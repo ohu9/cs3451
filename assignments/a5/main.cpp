@@ -3,6 +3,7 @@
 //  Dartmouth COSC 77/177 Computer Graphics, starter code
 //  Contact: Bo Zhu (bo.zhu@dartmouth.edu)
 // #####################################################################
+
 #include "Common.h"
 #include "OpenGLCommon.h"
 #include "OpenGLMarkerObjects.h"
@@ -85,7 +86,6 @@ public:
             Add_Texture_For_Mesh_Object(bunny, "bunny_normal.png", TexType::Normal);
         }
     }
-
     void Create_Old_Object_Scene()
     {
         Create_Background(OpenGLColor(0.3f, 0.2f, 0.1f, 1.f), OpenGLColor(0.7f, 0.6f, .3f, 1.f));   //// add background
@@ -104,10 +104,11 @@ public:
                  0, 0, 2.5, 0,
                  0, 0, 0, 1;
             
+            float theta = 1.2;
             Matrix4f r;
-            r << cos(1.2), 0, -sin(1.2), 0,
+            r << cos(theta), 0, -sin(theta), 0,
                  0, 1, 0, 0,
-                 sin(1.2), 0, cos(1.2), 0,
+                 sin(theta), 0, cos(theta), 0,
                  0, 0, 0, 1;
             pumpkin->Set_Model_Matrix(r*t);
 
