@@ -1,3 +1,0 @@
-./scripts/run_assignment.sh a2
-
-chmod u+r+x run_tutorial.sh
