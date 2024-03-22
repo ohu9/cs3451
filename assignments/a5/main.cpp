@@ -127,8 +127,8 @@ public:
 
     virtual void Initialize_Data() 
     {
-        Create_Bunny_Scene();           //// TODO: comment out this line for your customized scene
-        // Create_Old_Object_Scene();   //// TODO: uncomment this line for your customized scene
+        // Create_Bunny_Scene();           //// TODO: comment out this line for your customized scene
+        Create_Old_Object_Scene();   //// TODO: uncomment this line for your customized scene
 
         ////initialize shader
         OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a5_vert.vert", "a5_frag.frag", "a5_shader");

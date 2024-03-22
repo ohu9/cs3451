@@ -693,12 +693,12 @@ assignments/a6/CMakeFiles/a6.dir/clean:
 assignments/a7/CMakeFiles/a7.dir/all:
 	$(MAKE) $(MAKESILENT) -f assignments/a7/CMakeFiles/a7.dir/build.make assignments/a7/CMakeFiles/a7.dir/depend
 	$(MAKE) $(MAKESILENT) -f assignments/a7/CMakeFiles/a7.dir/build.make assignments/a7/CMakeFiles/a7.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=27,28,29,30 "Built target a7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=27,28,29 "Built target a7"
 .PHONY : assignments/a7/CMakeFiles/a7.dir/all
 
 # Build rule for subdir invocation for target.
 assignments/a7/CMakeFiles/a7.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 assignments/a7/CMakeFiles/a7.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : assignments/a7/CMakeFiles/a7.dir/rule
@@ -771,12 +771,12 @@ tutorials/tutorial_cpp101/CMakeFiles/tutorial_cpp101.dir/clean:
 tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/all:
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/build.make tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/build.make tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=71,72,73,74 "Built target tutorial_hello_glsl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=71,72,73 "Built target tutorial_hello_glsl"
 .PHONY : tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/rule
@@ -797,12 +797,12 @@ tutorials/tutorial_hello_glsl/CMakeFiles/tutorial_hello_glsl.dir/clean:
 tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/all:
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/build.make tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/build.make tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=75,76,77,78 "Built target tutorial_lighting"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=74,75,76,77,78 "Built target tutorial_lighting"
 .PHONY : tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_lighting/CMakeFiles/tutorial_lighting.dir/rule
@@ -880,7 +880,7 @@ tutorials/tutorial_opengl/CMakeFiles/tutorial_opengl.dir/all: tutorials/tutorial
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/CMakeFiles/tutorial_opengl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/CMakeFiles/tutorial_opengl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/CMakeFiles/tutorial_opengl.dir/rule
@@ -927,12 +927,12 @@ tutorials/tutorial_opengl/glfw-3.3/CMakeFiles/uninstall.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/build.make tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/build.make tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=38,39,40,41 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=37,38,39,40,41 "Built target glfw"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/rule
@@ -953,12 +953,12 @@ tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target boing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=30 "Built target boing"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/rule
@@ -979,7 +979,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/boing.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/gears.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/gears.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/gears.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/gears.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=37 "Built target gears"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target gears"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/gears.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1010,7 +1010,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/heightmap.dir/all: tutori
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/heightmap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/heightmap.dir/rule
@@ -1036,7 +1036,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/offscreen.dir/all: tutori
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/offscreen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/offscreen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/offscreen.dir/rule
@@ -1057,12 +1057,12 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/offscreen.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=54 "Built target particles"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=53,54 "Built target particles"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/particles.dir/rule
@@ -1088,7 +1088,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/sharing.dir/all: tutorial
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/sharing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/sharing.dir/rule
@@ -1114,7 +1114,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/simple.dir/all: tutorials
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/simple.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/simple.dir/rule
@@ -1135,7 +1135,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/simple.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/splitview.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/splitview.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/splitview.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/splitview.dir/build.make tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/splitview.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=58 "Built target splitview"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target splitview"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/splitview.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1166,7 +1166,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/wave.dir/all: tutorials/t
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/wave.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/wave.dir/rule
@@ -1187,7 +1187,7 @@ tutorials/tutorial_opengl/glfw-3.3/examples/CMakeFiles/wave.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/clipboard.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/clipboard.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/clipboard.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/clipboard.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/clipboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=31,32 "Built target clipboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=31 "Built target clipboard"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/clipboard.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1218,7 +1218,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/events.dir/all: tutorials/tu
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/events.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/events.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/events.dir/rule
@@ -1244,7 +1244,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/msaa.dir/all: tutorials/tuto
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/msaa.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/msaa.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/msaa.dir/rule
@@ -1270,7 +1270,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/glfwinfo.dir/all: tutorials/
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/glfwinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/glfwinfo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/glfwinfo.dir/rule
@@ -1291,12 +1291,12 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/glfwinfo.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=46 "Built target iconify"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=45,46 "Built target iconify"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/iconify.dir/rule
@@ -1322,7 +1322,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/monitors.dir/all: tutorials/
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/monitors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/monitors.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/monitors.dir/rule
@@ -1348,7 +1348,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/reopen.dir/all: tutorials/tu
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/reopen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/reopen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/reopen.dir/rule
@@ -1369,12 +1369,12 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/reopen.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=33 "Built target cursor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=32 "Built target cursor"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/rule
@@ -1395,12 +1395,12 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/cursor.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=34 "Built target empty"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=33,34 "Built target empty"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/empty.dir/rule
@@ -1426,7 +1426,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/gamma.dir/all: tutorials/tut
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/gamma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/gamma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/gamma.dir/rule
@@ -1447,7 +1447,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/gamma.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/icon.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/icon.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/icon.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/icon.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/icon.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=45 "Built target icon"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target icon"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/icon.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1478,7 +1478,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/inputlag.dir/all: tutorials/
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/inputlag.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/inputlag.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/inputlag.dir/rule
@@ -1504,7 +1504,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/joysticks.dir/all: tutorials
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/joysticks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/joysticks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/joysticks.dir/rule
@@ -1525,7 +1525,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/joysticks.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=53 "Built target opacity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target opacity"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1551,12 +1551,12 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/opacity.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target tearing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=58 "Built target tearing"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/tearing.dir/rule
@@ -1582,7 +1582,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/threads.dir/all: tutorials/t
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/threads.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/threads.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/threads.dir/rule
@@ -1603,7 +1603,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/threads.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=61 "Built target timeout"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target timeout"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1629,12 +1629,12 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/timeout.dir/clean:
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/all: tutorials/tutorial_opengl/glfw-3.3/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/depend
 	$(MAKE) $(MAKESILENT) -f tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/build.make tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num= "Built target title"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=61 "Built target title"
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/all
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/title.dir/rule
@@ -1660,7 +1660,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/vulkan.dir/all: tutorials/tu
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/vulkan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/vulkan.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/vulkan.dir/rule
@@ -1686,7 +1686,7 @@ tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/windows.dir/all: tutorials/t
 
 # Build rule for subdir invocation for target.
 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/windows.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliviahu/3451/cs3451/build/CMakeFiles 0
 .PHONY : tutorials/tutorial_opengl/glfw-3.3/tests/CMakeFiles/windows.dir/rule

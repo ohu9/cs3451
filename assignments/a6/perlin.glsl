@@ -1,4 +1,4 @@
-// #define Terrain 1		/* Uncomment this macro for Step II */
+#define Terrain 1		/* Uncomment this macro for Step II */
 
 struct Light 
 {
@@ -29,9 +29,12 @@ vec2 hash2(vec2 v)
 	/* Your implementation starts */
 
 	// Provided defulat implementation
-	// rand  = 52.5 * fract(v.yx * 0.31 + vec2(0.31, 0.113));
-    // rand = -1.0 + 3.1 * fract(rand.x * rand.y * rand.yx);
-	rand = fract(v.yx + (sin(1e3*dot(v,vec2(57,-13.7)))*4375.5453));
+	rand  = 52.5 * fract(v.yx * 0.31 + vec2(0.31, 0.113));
+    rand = -1.0 + 3.1 * fract(rand.x * rand.y * rand.yx);
+
+	// rand = vec2(fract(sin(dot(v.xy, vec2(12.9898,78.233))) * -43758.5453123), 
+	// 			fract(sin(dot(v.yx, vec2(-143898,43.233))) *9458.5453123));
+	// rand = -1.0 + 4.3 * fract(rand.x * rand.y * rand.yx);
 	
 	/* Your implementation ends */
 
@@ -50,12 +53,12 @@ float perlin_noise(vec2 p)
     float noise = 0.0;
 	vec2 i = floor(p);
     vec2 f = fract(p);
-    vec2 s = smoothstep(0., 1., f);
+    vec2 s = smoothstep(0., 1, f);
 
-	vec2 f00 = p - vec2(0,0);
-	vec2 f01 = p - vec2(0,1);
-	vec2 f10 = p - vec2(1,0);
-	vec2 f11 = p - vec2(1,1);
+	vec2 f00 = p - (i + vec2(0,0));
+	vec2 f01 = p - (i + vec2(0,1));
+	vec2 f10 = p - (i + vec2(1,0));
+	vec2 f11 = p - (i + vec2(1,1));
 	vec2 g00 = hash2(i + vec2(0,0));
 	vec2 g01 = hash2(i + vec2(0,1));
 	vec2 g10 = hash2(i + vec2(1,0));
@@ -109,6 +112,8 @@ float height(vec2 v)
 	// h = 0.75 * noise_octave(v, 10);
 	// if(h<0) h *= .5;
 	
+	h = .8 * sin(noise_octave(v, 9));
+	if(h < 0) h = .9 * sin(h);
 	/* Your implementation ends */
 	
 	return h;
@@ -127,8 +132,12 @@ vec3 compute_normal(vec2 v, float d)
 	vec3 normal_vector = vec3(0,0,0);
 	
 	/* Your implementation starts */
-
+	vec3 v1 = vec3(v.x + d, v.y, height(vec2(v.x + d, v.y)));
+	vec3 v2 = vec3(v.x - d, v.y, height(vec2(v.x - d, v.y)));
+	vec3 v3 = vec3(v.x, v.y + d, height(vec2(v.x, v.y + d)));
+	vec3 v4 = vec3(v.x, v.y - d, height(vec2(v.x, v.y - d)));
 	
+	normal_vector = normalize(cross(v2 - v1, v4 - v3));
 	/* Your implementation ends */
 	
 	return normal_vector;
@@ -156,7 +165,15 @@ vec4 shading_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n)
 	vec4 color=vec4(0.0,0.0,0.0,1.0);
 	
     /* your implementation starts */
+    vec3 l = normalize(s - p);
+    float diff = max(dot(l,n), 0.f);
     
+    vec3 v = normalize(e - p);
+    vec3 r = -1*reflect(l, n);
+    float spec = pow(max(dot(v,r), 0.f), shininess);
+
+    vec3 phong = ka*light.Ia + kd*light.Id*diff + ks*light.Is*spec;
+    color = vec4(phong, 1.f);
     
 	/* your implementation ends */
 	
@@ -179,11 +196,11 @@ vec3 shading_noise(vec3 p)
 
 vec3 shading_terrain(vec3 pos) 
 {
-	const Light light = Light(vec3(3, 1, 3), vec3(1, 1, 1), vec3(20, 20, 20), vec3(1, 1, 1));
+	const Light light = Light(vec3(3, 1, 3), vec3(1, 1, 1), vec3(2, 2, 2), vec3(1, 1, 1));
 
 	//// calculate Phong shading color with normal
 	
-	vec3 n = compute_normal(pos.xy, 0.01);
+	vec3 n = compute_normal(pos.xy, 0.008);
 	vec3 e = position.xyz;
 	vec3 p = pos.xyz;
 	vec3 s = light.position;
@@ -195,9 +212,10 @@ vec3 shading_terrain(vec3 pos)
 	/* your implementation starts */
 	
 	// Provided default implementation
-	// float h = pos.z + .8;
-	// h = clamp(h, 0.0, 1.0);
+	float h = pos.z + .8;
+	h = clamp(h, 0.0, 1.0);
 	// emissive_color = mix(vec3(.4,.6,.2), vec3(.4,.3,.2), h);
+	emissive_color = mix(vec3(196, 220, 255)/255, vec3(10, 10, 10)/255, h);
 
 	/* your implementation ends */
 

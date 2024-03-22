@@ -27,8 +27,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/a4.dir/__/__/src/mikktspace.cpp.o.d"
   "CMakeFiles/a4.dir/main.cpp.o"
   "CMakeFiles/a4.dir/main.cpp.o.d"
-  "CMakeFiles/a4.dir/old_main.cpp.o"
-  "CMakeFiles/a4.dir/old_main.cpp.o.d"
   "a4"
   "a4.pdb"
 )

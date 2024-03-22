@@ -511,30 +511,6 @@ main.cpp.s:
 	cd /Users/oliviahu/3451/cs3451/build && $(MAKE) $(MAKESILENT) -f assignments/a4/CMakeFiles/a4.dir/build.make assignments/a4/CMakeFiles/a4.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-old_main.o: old_main.cpp.o
-.PHONY : old_main.o
-
-# target to build an object file
-old_main.cpp.o:
-	cd /Users/oliviahu/3451/cs3451/build && $(MAKE) $(MAKESILENT) -f assignments/a4/CMakeFiles/a4.dir/build.make assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o
-.PHONY : old_main.cpp.o
-
-old_main.i: old_main.cpp.i
-.PHONY : old_main.i
-
-# target to preprocess a source file
-old_main.cpp.i:
-	cd /Users/oliviahu/3451/cs3451/build && $(MAKE) $(MAKESILENT) -f assignments/a4/CMakeFiles/a4.dir/build.make assignments/a4/CMakeFiles/a4.dir/old_main.cpp.i
-.PHONY : old_main.cpp.i
-
-old_main.s: old_main.cpp.s
-.PHONY : old_main.s
-
-# target to generate assembly for a file
-old_main.cpp.s:
-	cd /Users/oliviahu/3451/cs3451/build && $(MAKE) $(MAKESILENT) -f assignments/a4/CMakeFiles/a4.dir/build.make assignments/a4/CMakeFiles/a4.dir/old_main.cpp.s
-.PHONY : old_main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -590,9 +566,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... old_main.o"
-	@echo "... old_main.i"
-	@echo "... old_main.s"
 .PHONY : help
 
 

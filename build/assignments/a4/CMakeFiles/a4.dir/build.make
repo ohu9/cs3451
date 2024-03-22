@@ -209,24 +209,10 @@ assignments/a4/CMakeFiles/a4.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/a4.dir/main.cpp.s"
 	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oliviahu/3451/cs3451/assignments/a4/main.cpp -o CMakeFiles/a4.dir/main.cpp.s
 
-assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o: assignments/a4/CMakeFiles/a4.dir/flags.make
-assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o: /Users/oliviahu/3451/cs3451/assignments/a4/old_main.cpp
-assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o: assignments/a4/CMakeFiles/a4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o"
-	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o -MF CMakeFiles/a4.dir/old_main.cpp.o.d -o CMakeFiles/a4.dir/old_main.cpp.o -c /Users/oliviahu/3451/cs3451/assignments/a4/old_main.cpp
-
-assignments/a4/CMakeFiles/a4.dir/old_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/a4.dir/old_main.cpp.i"
-	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oliviahu/3451/cs3451/assignments/a4/old_main.cpp > CMakeFiles/a4.dir/old_main.cpp.i
-
-assignments/a4/CMakeFiles/a4.dir/old_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/a4.dir/old_main.cpp.s"
-	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oliviahu/3451/cs3451/assignments/a4/old_main.cpp -o CMakeFiles/a4.dir/old_main.cpp.s
-
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o: assignments/a4/CMakeFiles/a4.dir/flags.make
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o: /Users/oliviahu/3451/cs3451/ext/tiny_obj_loader/TinyObjLoader.cpp
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o: assignments/a4/CMakeFiles/a4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o"
 	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o -MF CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o.d -o CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o -c /Users/oliviahu/3451/cs3451/ext/tiny_obj_loader/TinyObjLoader.cpp
 
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.i: cmake_force
@@ -240,7 +226,7 @@ assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.s: 
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o: assignments/a4/CMakeFiles/a4.dir/flags.make
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o: /Users/oliviahu/3451/cs3451/ext/tiny_obj_loader/tiny_obj_loader.cpp
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o: assignments/a4/CMakeFiles/a4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o"
 	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o -MF CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o.d -o CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o -c /Users/oliviahu/3451/cs3451/ext/tiny_obj_loader/tiny_obj_loader.cpp
 
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.i: cmake_force
@@ -254,7 +240,7 @@ assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.s
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o: assignments/a4/CMakeFiles/a4.dir/flags.make
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o: /Users/oliviahu/3451/cs3451/ext/stb/StbImage.cpp
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o: assignments/a4/CMakeFiles/a4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o"
 	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o -MF CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o.d -o CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o -c /Users/oliviahu/3451/cs3451/ext/stb/StbImage.cpp
 
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.i: cmake_force
@@ -268,7 +254,7 @@ assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.s: cmake_force
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o: assignments/a4/CMakeFiles/a4.dir/flags.make
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o: /Users/oliviahu/3451/cs3451/ext/tiny_gltf/TinyGltfLoader.cpp
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o: assignments/a4/CMakeFiles/a4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o"
 	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o -MF CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o.d -o CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o -c /Users/oliviahu/3451/cs3451/ext/tiny_gltf/TinyGltfLoader.cpp
 
 assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.i: cmake_force
@@ -291,7 +277,6 @@ a4_OBJECTS = \
 "CMakeFiles/a4.dir/__/__/src/glad.cpp.o" \
 "CMakeFiles/a4.dir/__/__/src/mikktspace.cpp.o" \
 "CMakeFiles/a4.dir/main.cpp.o" \
-"CMakeFiles/a4.dir/old_main.cpp.o" \
 "CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o" \
 "CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o" \
 "CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o" \
@@ -310,14 +295,13 @@ assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/src/OpenGLWindow.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/src/glad.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/src/mikktspace.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/main.cpp.o
-assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/old_main.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/TinyObjLoader.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_obj_loader/tiny_obj_loader.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/ext/stb/StbImage.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/__/__/ext/tiny_gltf/TinyGltfLoader.cpp.o
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/build.make
 assignments/a4/a4: assignments/a4/CMakeFiles/a4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable a4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliviahu/3451/cs3451/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable a4"
 	cd /Users/oliviahu/3451/cs3451/build/assignments/a4 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/a4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

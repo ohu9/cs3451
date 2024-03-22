@@ -24,8 +24,8 @@ class MeshDriver : public OpenGLViewer
 	OpenGLSegmentMesh* opengl_normals=nullptr;							////normals
 	OpenGLSegmentMesh* opengl_edges=nullptr;							////edges
 
-	bool use_obj_mesh=false;											////flag for use obj, set it to be true if you want to load an obj mesh
-	std::string obj_mesh_name="./obj/fish.obj";								////obj file name
+	bool use_obj_mesh=true;											////flag for use obj, set it to be true if you want to load an obj mesh
+	std::string obj_mesh_name="./obj/bunny.obj";								////obj file name
 	////There are two other obj files provided, cap.obj and jetFighter.obj.
 	////They are both exported from resource library of Autodesk Maya 2020
 

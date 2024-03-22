@@ -167,7 +167,7 @@ void main()
     //// Step 1: visualize normal vectors as colors
     //// Your task is to implement the shading_normal function
 
-    frag_color = shading_normal();
+    // frag_color = shading_normal();
 
     //// Step 2: ambient shading
     //// Your task is to implement the shading_normal function 
@@ -188,7 +188,7 @@ void main()
     //// Your implementation will be in the function shading_phong
     //// Uncomment the following line to call the function
 
-    // frag_color = shading_phong(light1, e, p, s1, n);
+    frag_color = shading_phong(light1, e, p, s1, n);
 
     //// Step 5: multiple lights
     //// By default we calculate the contribution from light1. 
