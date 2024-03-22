@@ -101,8 +101,8 @@ public:
     //// Step 7: Comment out Create_Bunny_Scene() and uncomment Create_Shining_Scene() for your customized scene.
     virtual void Initialize_Data()
     {
-        // Create_Bunny_Scene();               //// TODO: comment out this line for your customized scene
-        Create_Shining_Scene();           //// TODO: uncomment this line for your customized scene
+        Create_Bunny_Scene();               //// TODO: comment out this line for your customized scene
+        // Create_Shining_Scene();           //// TODO: uncomment this line for your customized scene
 
         OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a4_vert.vert", "a4_frag.frag", "a4_shader");
         for (auto& mesh_obj : mesh_object_array) {

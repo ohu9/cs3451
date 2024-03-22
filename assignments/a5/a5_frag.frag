@@ -251,11 +251,11 @@ void main()
     //// Step 3: Phong Shading with Texture
     //// Your task is to implement the shading *shading_texture_with_phong()* function, that is called within shading_texture_with_lighting()
     //// Uncomment the following line to call the function (you might also need to comment out previous lines that assign frag_color)
-    // frag_color = shading_texture_with_lighting();
+    frag_color = shading_texture_with_lighting();
 
     //// Step 4: Phong Shading with Normal Mapping
     //// Your tasks are to implement the five functions as mentioned below that are used to calcuate perturbed normal vector in the shading_texture_with_normal_mapping() function: 
     //// (1) calc_bitangent(), (2) calc_TBN_matrix(), (3) read_normal_texture(), (4) calc_perturbed_normal(), and (5) shading_texture_with_normal_mapping()
     //// Uncomment the following line to call the function (you might also need to comment out previous lines that assign frag_color)
-    frag_color = shading_texture_with_normal_mapping();
+    // frag_color = shading_texture_with_normal_mapping();
 }
