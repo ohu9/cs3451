@@ -28,13 +28,7 @@ vec2 hash2(vec2 v)
 	
 	/* Your implementation starts */
 
-	// Provided defulat implementation
-	rand = v.xy * fract(sin(dot(v.xy ,vec2(12.9898,78.233))) * 658.5453);
-
-	// rand = v.xy * fract(sin(vec2( dot(v.xyx,vec3(127.1,311.7, 74.7)),
-	// 		  dot(v.yxy,vec3(269.5,183.3,246.1))))*43758.5453123);
-
-	// rand = v.xy * fract(sin(7.289 * v.x + 110.23 * v.y) * 23758.5453);
+	rand = v.xy * fract(sin(7.289 * v.x + 110.23 * v.y) * 23758.5453);
 	rand = -1.0 + 3.1 * fract(rand.x * rand.y * rand.yx);
 
 	/* Your implementation ends */
@@ -117,7 +111,6 @@ float noise_octave(vec2 p, int num)
 
 	for (int i = 0; i < num; i++) {
 		sum += pow(2, -i) * perlin_noise(pow(2, i) * p);
-		// sum += pow(2, -i) * cellular_noise(pow(2, i) * p);
 	}
 	return sum;
 }
@@ -137,10 +130,6 @@ float height(vec2 v)
     float h = 0;
 	
 	/* Your implementation starts */
-	
-	// Provided default implementation
-	// h = 0.75 * noise_octave(v, 10);
-	// if(h<0) h *= .5;
 	
 	h = .7 * sin(noise_octave(v, 9));
 	if (h < 0) h = 1.3 * (h);
@@ -246,7 +235,6 @@ vec3 shading_terrain(vec3 pos)
 	// Provided default implementation
 	float h = pos.z + .7;
 	h = clamp(h, 0.0, 1.0);
-	// emissive_color = mix(vec3(.4,.6,.2), vec3(.4,.3,.2), h);
 	
 	emissive_color = mix(vec3(10,10,10)/255, vec3(230,230,230)/255, h);
 	if (.7 * sin(noise_octave(pos.xy, 9)) <= -.35) emissive_color = mix(vec3(64, 76, 92)/255, vec3(24, 41, 64)/255, h);
