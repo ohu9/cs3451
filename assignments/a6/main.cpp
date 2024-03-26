@@ -64,12 +64,12 @@ public:
         Create_Background(OpenGLColor(0.1f, 0.1f, 0.1f, 1.f), OpenGLColor(0.1f, 0.1f, .4f, 1.f)); // add background
 
 		OpenGLShaderLibrary::Instance()->Add_Shader_From_File("a6_vert.vert", "a6_frag.frag", "perlin.glsl", "a6_shader");
-		////add the plane mesh object
+		//add the plane mesh object
 		auto obj = Add_Obj_Mesh_Object("plane.obj");
 		obj->Set_Ka(Vector3f(0.1f, 0.1f, 0.1f));
         obj->Set_Kd(Vector3f(0.7f, 0.7f, 0.7f));
         obj->Set_Ks(Vector3f(1, 1, 1));
-        obj->Set_Shininess(128.f);
+        obj->Set_Shininess(200.f);
 		obj->Add_Shader_Program(OpenGLShaderLibrary::Get_Shader("a6_shader"));
 		Set_Polygon_Mode(obj, PolygonMode::Fill);
 		Set_Shading_Mode(obj, ShadingMode::Texture);
