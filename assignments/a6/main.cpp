@@ -69,7 +69,7 @@ public:
 		obj->Set_Ka(Vector3f(0.1f, 0.1f, 0.1f));
         obj->Set_Kd(Vector3f(0.7f, 0.7f, 0.7f));
         obj->Set_Ks(Vector3f(1, 1, 1));
-        obj->Set_Shininess(200.f);
+        obj->Set_Shininess(100.f);
 		obj->Add_Shader_Program(OpenGLShaderLibrary::Get_Shader("a6_shader"));
 		Set_Polygon_Mode(obj, PolygonMode::Fill);
 		Set_Shading_Mode(obj, ShadingMode::Texture);

@@ -1,4 +1,4 @@
-// #define Terrain 1		/* Uncomment this macro for Step II */
+#define Terrain 1		/* Uncomment this macro for Step II */
 
 struct Light 
 {
@@ -28,8 +28,9 @@ vec2 hash2(vec2 v)
 	
 	/* Your implementation starts */
 
-	rand = v.xy * fract(sin(7.289 * v.x + 110.23 * v.y) * 23758.5453);
-	rand = -1.0 + 3.1 * fract(rand.x * rand.y * rand.yx);
+	rand = v.xy * fract(sin(7.289 * v.x + 110.23 * v.y) * 28.5453);
+	// rand = -1.0 + 3.1 * fract(rand.x * rand.y * rand.yx);
+	rand = vec2(1, 1);
 
 	/* Your implementation ends */
 
@@ -110,7 +111,8 @@ float noise_octave(vec2 p, int num)
 	float sum = 0;
 
 	for (int i = 0; i < num; i++) {
-		sum += pow(2, -i) * perlin_noise(pow(2, i) * p);
+		// sum += pow(2, -i) * perlin_noise(pow(2, i) * p);
+		sum += pow(2, -i) * cellular_noise(pow(2, i) * p);
 	}
 	return sum;
 }
@@ -131,10 +133,10 @@ float height(vec2 v)
 	
 	/* Your implementation starts */
 	
-	h = .7 * sin(noise_octave(v, 9));
-	if (h < 0) h = 1.3 * (h);
-	if (h < -.45) h = .05*h - .45;
-	if (h > -.1) h = .08*h + -.1;
+	h = 1 * sin(noise_octave(v, 1));
+	if (h < .2) h = .5*(h) + .1;
+	// if (h < -.45) h = .05*h - .45;
+	// if (h > -.1) h = .08*h + -.1;
 	/* Your implementation ends */
 	
 	return h;
@@ -204,7 +206,7 @@ vec4 shading_phong(Light light, vec3 e, vec3 p, vec3 s, vec3 n)
 //// shade the noise function 
 vec3 shading_noise(vec3 p) 
 {
-	float h = 0.5 + 0.5 * (noise_octave(p.xy, 9));
+	float h = 0.5 + 0.5 * (noise_octave(p.xy, 1));
 	return vec3(h, h, h);
 }
 
@@ -217,7 +219,7 @@ vec3 shading_noise(vec3 p)
 
 vec3 shading_terrain(vec3 pos) 
 {
-	const Light light = Light(vec3(3, 1, 3), vec3(1, 1, 1), vec3(2, 2, 2), vec3(1, 1, 1));
+	const Light light = Light(vec3(7, 5, 7), vec3(2, 2, 2), vec3(2, 2, 2), vec3(1, 1, 1));
 
 	//// calculate Phong shading color with normal
 	
@@ -233,11 +235,10 @@ vec3 shading_terrain(vec3 pos)
 	/* your implementation starts */
 	
 	// Provided default implementation
-	float h = pos.z + .7;
+	float h = pos.z + .3;
 	h = clamp(h, 0.0, 1.0);
 	
-	emissive_color = mix(vec3(10,10,10)/255, vec3(230,230,230)/255, h);
-	if (.7 * sin(noise_octave(pos.xy, 9)) <= -.35) emissive_color = mix(vec3(64, 76, 92)/255, vec3(24, 41, 64)/255, h);
+	emissive_color = mix(vec3(109, 161, 201)/255, vec3(170,170,170)/255, h);
 
 	/* your implementation ends */
 
