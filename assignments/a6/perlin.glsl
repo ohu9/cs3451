@@ -1,4 +1,4 @@
-#define Terrain 1		/* Uncomment this macro for Step II */
+// #define Terrain 1		/* Uncomment this macro for Step II */
 
 struct Light 
 {
@@ -98,6 +98,33 @@ float cellular_noise(vec2 p) {
 	return m_dist;
 }
 
+float voronoi(vec2 p) {
+
+    // Cell positions
+    vec2 point[5];
+    point[0] = vec2(0.83,0.75);
+    point[1] = vec2(0.60,0.07);
+    point[2] = vec2(0.28,0.64);
+    point[3] = vec2(0.31,0.26);
+    point[4] = vec2(0.14,0.33);
+
+    float m_dist = 1.;  // minimum distance
+    vec2 m_point;        // minimum position
+
+    // Iterate through the points positions
+    for (int i = 0; i < 5; i++) {
+        float dist = distance(p, point[i]);
+        if ( dist < m_dist ) {
+            // Keep the closer distance
+            m_dist = dist;
+
+            // Kepp the position of the closer point
+            m_point = point[i];
+        }
+    }
+    return m_dist*.2;
+}
+
 /////////////////////////////////////////////////////
 //// Step 1 - Part 3: Octave synthesis
 //// In this function, you will synthesize the noise octave by invoking the perlin_noise function, which should be implemented in the previous step. 
@@ -112,7 +139,8 @@ float noise_octave(vec2 p, int num)
 
 	for (int i = 0; i < num; i++) {
 		// sum += pow(2, -i) * perlin_noise(pow(2, i) * p);
-		sum += pow(2, -i) * cellular_noise(pow(2, i) * p);
+		// sum += pow(2, -i) * cellular_noise(pow(2, i) * p);
+		sum += pow(2, -i) * voronoi(pow(2, i) * p);
 	}
 	return sum;
 }

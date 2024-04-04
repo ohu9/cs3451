@@ -188,14 +188,14 @@ Hit hitPlane(const Ray r, const Plane pl)
     
     //// uncomment the following lines and run the code
 
-    // float t = dot(pl.p - r.ori, pl.n) / dot(r.dir, pl.n);
+    float t = dot(pl.p - r.ori, pl.n) / dot(r.dir, pl.n);
 
-    // if(t <= 0.0) 
-    //    return noHit;
+    if(t <= 0.0) 
+       return noHit;
 
-    // vec3 hitP = r.ori + t * r.dir;
-    // vec3 normal = pl.n;
-    // hit = Hit(t, hitP, normal, pl.matId);
+    vec3 hitP = r.ori + t * r.dir;
+    vec3 normal = pl.n;
+    hit = Hit(t, hitP, normal, pl.matId);
 
     /* default implementation ends */
     
@@ -214,11 +214,26 @@ Hit hitPlane(const Ray r, const Plane pl)
 Hit hitSphere(const Ray r, const Sphere s) 
 {
     Hit hit = noHit;
-	
-    /* your implementation starts */
 
-	/* your implementation ends */
+    // 1. calculate a, b, c using r and s
+    float a = dot(r.dir,r.dir);
+    float b = 2*(dot(r.ori,r.dir) - dot(s.ori,r.dir));
+    float c = dot(r.ori,r.ori) + dot(s.ori,s.ori) - 2*dot(r.ori,s.ori) - dot(s.r,s.r);
+
+    // 3. calculate determinnate det and return noHit if det < 0
+    float det = pow(b,2) - 4*a*c;
+    if (det < 0) return hit;
+
+    // 3. calculate t using a,b,c and return noHit if t < 0
+    float t = (-1*b - pow(det, .5)) / (2*a);
+    if (t < 0) return hit;
     
+    // 4. calculate intersection point p and normal n using t
+    vec3 p = r.ori + t*r.dir;
+    vec3 n = normalize(p - s.ori);
+    
+    hit = Hit(t, p, n, s.matId);
+
 	return hit;
 }
 
@@ -261,13 +276,19 @@ vec3 shadingPhong(Light light, int matId, vec3 e, vec3 p, vec3 s, vec3 n)
     vec3 color = matId == 0 ? vec3(0.2, 0, 0) : vec3(0, 0, 0.3);
 
     vec3 ka = materials[matId].ka;
-    vec3 kd = materials[matId].kd;
+    vec3 kd = sampleDiffuse(matId, p);//materials[matId].kd;
     vec3 ks = materials[matId].ks;
     float shininess = materials[matId].shininess;
     
-    /* your implementation starts */
-	
-	/* your implementation ends */
+	vec3 l = normalize(s - p);
+    float diff = max(dot(l,n), 0.f);
+    
+    vec3 v = normalize(e - p);
+    vec3 r = -1*reflect(l, n);
+    float spec = pow(max(dot(v,r), 0.f), shininess);
+
+    color = ka*light.Ia + kd*light.Id*diff + ks*light.Is*spec;
+    // color = ka*light.Ia + sampleDiffuse(matId, p) + ks*light.Is*spec;
     
 	return color;
 }
@@ -288,8 +309,7 @@ vec3 sampleDiffuse(int matId, vec3 p)
 		vec2 uv = vec2(p.x, p.z) / 5.0;     /* uv texture on the ground */
 
         /* your implementation starts */
-        
-        
+        color = texture(floor_color, uv).xyz * mat_color;
 		/* your implementation ends */
     }
 
@@ -315,10 +335,9 @@ bool isShadowed(Light light, Hit h)
 	float t_max = length(toLight);                  /* length of toLight */
 	vec3 dir = normalize(toLight);                  /* direction of toLight */
 	
-    /* your implementation starts */
-	
-    
-	/* your implementation ends */
+    Ray shadowRay = Ray(intersect + Epsilon, toLight);
+	float t = findHit(shadowRay).t;
+    return t > 0 && t < t_max;
     
 	return shadowed;
 }
@@ -368,7 +387,7 @@ vec3 rayTrace(in Ray r, out Hit hit)
 
 /* your implementation starts */
 
-const int recursiveDepth = 1;
+const int recursiveDepth = 50;
 
 /* your implementation ends */
 
@@ -405,10 +424,11 @@ void main()
         vec3 intersect = hit.p;
         vec3 normal = hit.normal;
         vec3 incoming_dir = recursiveRay.dir;
-        vec3 reflected_dir = vec3(0);           /* calculate the reflected dir */
+        // vec3 reflected_dir = vec3(0);           /* calculate the reflected dir */
 
 		/* your implementation starts */
-        
+        vec3 reflected_dir = incoming_dir - 2*dot(incoming_dir, normal)*normal;
+        recursiveRay = Ray(intersect, reflected_dir);
 		/* your implementation ends */
     }
 	
