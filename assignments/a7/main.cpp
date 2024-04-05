@@ -41,6 +41,8 @@ public:
         // Add texture
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("floor.jpg", "floor_color");
         screen_cover->Add_Texture("floor_color", OpenGLTextureLibrary::Get_Texture("floor_color"));
+        OpenGLTextureLibrary::Instance()->Add_Texture_From_File("silver.jpg", "ball_color");
+        screen_cover->Add_Texture("ball_color", OpenGLTextureLibrary::Get_Texture("ball_color"));
         
         screen_cover->use_tex = true;
         screen_cover->Set_Data_Refreshed();

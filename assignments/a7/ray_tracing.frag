@@ -8,6 +8,7 @@ out vec4 fragColor;
 
 uniform sampler2D bufferTexture;
 uniform sampler2D floor_color;
+uniform sampler2D ball_color;
 
 #define M_PI 3.1415925585
 #define Epsilon 1e-6
@@ -127,7 +128,7 @@ const Hit noHit = Hit(
 
 void initScene() 
 {
-    camera = Camera(vec3(0, 15, 50), vec3(5, 0, 0), vec3(0, 3, -3), vec3(-2.5, -1.5, -1));
+    camera = Camera(vec3(0, 20,70), vec3(5, 0, 0), vec3(0, 4, -.1), vec3(-2.5, -1.2, -2.5));
 
     // Floor Material 
     materials[0].ka = vec3(0.1);
@@ -136,22 +137,22 @@ void initScene()
     materials[0].shininess = 100.0;
     materials[0].kr = 0.5 * materials[0].ks;
 
-    materials[1].ka = vec3(0.1);
-    materials[1].kd = vec3(0.8, 0.2, 0.2);
-    materials[1].ks = vec3(0.8);
-    materials[1].shininess = 128;
+    materials[1].ka = vec3(0.01);
+    materials[1].kd = vec3(0.4, 0.4, 0.4);
+    materials[1].ks = vec3(1.5);
+    materials[1].shininess = 98;
     materials[1].kr = 0.5 * materials[1].ks;
 
-    materials[2].ka = vec3(0.1);
-    materials[2].kd = vec3(0.2, 0.7, 0.2);
-    materials[2].ks = vec3(0.8);
-    materials[2].shininess = 128;
+    materials[2].ka = vec3(0.01);
+    materials[2].kd = vec3(0.2, 0.2, 0.2);
+    materials[2].ks = vec3(1.5);
+    materials[2].shininess = 98;
     materials[2].kr = 0.5 * materials[2].ks;
 
-    materials[3].ka = vec3(0.2);
-    materials[3].kd = vec3(0.2, 0.2, 0.9);
-    materials[3].ks = vec3(0.8);
-    materials[3].shininess = 128;
+    materials[3].ka = vec3(0.01);
+    materials[3].kd = vec3(0.15, 0.15, 0.15);
+    materials[3].ks = vec3(1.4);
+    materials[3].shininess = 98;
     materials[3].kr = 0.5 * materials[3].ks;
 
     lights[0] = Light(vec3(-1, 3, 0.5), 
@@ -161,12 +162,14 @@ void initScene()
     lights[1] = Light(vec3(0.5, 2, 1), 
                             /*Ia*/ vec3(0.1, 0.1, 0.1), 
                             /*Id*/ vec3(0.9, 0.9, 0.9), 
-                            /*Is*/ vec3(0.5, 0.5, 0.5));
+                            /*Is*/ vec3(10.5, 10.5, 10.5));
     planes[0] = Plane(vec3(0, 1, 0), vec3(0, 0, 0), 0);
 
-    spheres[0] = Sphere(vec3(0, 0.6, -1), 0.6, 1);
-    spheres[1] = Sphere(vec3(1.1, 0.4, -0.8), 0.4, 2);
-    spheres[2] = Sphere(vec3(-1.2, 0.5, -0.8), 0.5, 3);
+    spheres[0] = Sphere(vec3(0, 0.7, -.2), 0.7, 1);
+    spheres[1] = Sphere(vec3(0, 1.9, -.2), 0.5, 2);
+    spheres[2] = Sphere(vec3(0, 2.7, -.2), 0.3, 3);
+    // spheres[1] = Sphere(vec3(1.1, 0.4, -0.8), 0.4, 2);
+    // spheres[2] = Sphere(vec3(-1.2, 0.5, -0.8), 0.5, 3);
 }
 
 /////////////////////////////////////////////////////
@@ -313,7 +316,11 @@ vec3 sampleDiffuse(int matId, vec3 p)
 		/* your implementation ends */
     }
 
-    /* no texture for the spheres */
+    /* apply texture for balls */
+    if(matId >= 1 && matId <= 3) {
+        vec2 uv = vec2(p.y, p.z) / 100.0;
+        color = texture(ball_color, uv).xyz * mat_color;
+    }
     
     return color;
 }
@@ -341,6 +348,10 @@ bool isShadowed(Light light, Hit h)
     
 	return shadowed;
 }
+
+// bool isRefracted(Ligh light, Hit h) { // isAttentuated? calculate refraction degree? (Snell's law)
+
+// }
 
 /////////////////////////////////////////////////////
 //// Generate the primary ray using the input screen coordinates
