@@ -311,12 +311,10 @@ vec3 sampleDiffuse(int matId, vec3 p)
     if(matId == 0) {		
 		vec2 uv = vec2(p.x, p.z) / 5.0;     /* uv texture on the ground */
 
-        /* your implementation starts */
         color = texture(floor_color, uv).xyz * mat_color;
-		/* your implementation ends */
     }
 
-    /* apply texture for balls */
+    /* apply texture for spheres */
     if(matId >= 1 && matId <= 3) {
         vec2 uv = vec2(p.y, p.z) / 100.0;
         color = texture(ball_color, uv).xyz * mat_color;
@@ -348,10 +346,6 @@ bool isShadowed(Light light, Hit h)
     
 	return shadowed;
 }
-
-// bool isRefracted(Ligh light, Hit h) { // isAttentuated? calculate refraction degree? (Snell's law)
-
-// }
 
 /////////////////////////////////////////////////////
 //// Generate the primary ray using the input screen coordinates
