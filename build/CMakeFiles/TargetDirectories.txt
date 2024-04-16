@@ -59,6 +59,13 @@
 /Users/oliviahu/3451/cs3451/build/assignments/a7/CMakeFiles/install.dir
 /Users/oliviahu/3451/cs3451/build/assignments/a7/CMakeFiles/install/local.dir
 /Users/oliviahu/3451/cs3451/build/assignments/a7/CMakeFiles/install/strip.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/a8.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/edit_cache.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/rebuild_cache.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/list_install_components.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/install.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/install/local.dir
+/Users/oliviahu/3451/cs3451/build/assignments/a8/CMakeFiles/install/strip.dir
 /Users/oliviahu/3451/cs3451/build/tutorials/CMakeFiles/edit_cache.dir
 /Users/oliviahu/3451/cs3451/build/tutorials/CMakeFiles/rebuild_cache.dir
 /Users/oliviahu/3451/cs3451/build/tutorials/CMakeFiles/list_install_components.dir

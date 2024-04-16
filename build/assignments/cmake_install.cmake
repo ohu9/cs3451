@@ -46,6 +46,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/oliviahu/3451/cs3451/build/assignments/a5/cmake_install.cmake")
   include("/Users/oliviahu/3451/cs3451/build/assignments/a6/cmake_install.cmake")
   include("/Users/oliviahu/3451/cs3451/build/assignments/a7/cmake_install.cmake")
+  include("/Users/oliviahu/3451/cs3451/build/assignments/a8/cmake_install.cmake")
 
 endif()
 

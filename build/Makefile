@@ -253,6 +253,19 @@ a7/fast:
 .PHONY : a7/fast
 
 #=============================================================================
+# Target rules for targets named a8
+
+# Build rule for target.
+a8: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 a8
+.PHONY : a8
+
+# fast build rule for target.
+a8/fast:
+	$(MAKE) $(MAKESILENT) -f assignments/a8/CMakeFiles/a8.dir/build.make assignments/a8/CMakeFiles/a8.dir/build
+.PHONY : a8/fast
+
+#=============================================================================
 # Target rules for targets named tutorial_camera
 
 # Build rule for target.
@@ -805,6 +818,7 @@ help:
 	@echo "... a5"
 	@echo "... a6"
 	@echo "... a7"
+	@echo "... a8"
 	@echo "... boing"
 	@echo "... clipboard"
 	@echo "... cursor"
